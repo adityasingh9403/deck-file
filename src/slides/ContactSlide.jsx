@@ -21,10 +21,10 @@ export default function ContactSlide() {
       initial="initial"
       animate="animate"
       exit="exit"
-      className="relative min-h-screen w-full bg-[#0F172A] text-white overflow-hidden flex flex-col"
+      className="relative min-h-screen w-full bg-[#0F2F4F] text-white overflow-hidden flex flex-col"
     >
       {/* --- AMBIENT BACKGROUND GLOW --- */}
-      <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#FF5722]/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#9E7C2E]/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[100px] pointer-events-none" />
 
       {/* --- MAIN CONTENT GRID --- */}
@@ -37,13 +37,13 @@ export default function ContactSlide() {
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center gap-4 mb-8"
           >
-            <Zap size={20} className="text-[#FF5722] fill-[#FF5722]" />
+            <Zap size={20} className="text-[#9E7C2E] fill-[#9E7C2E]" />
             <span className="text-[10px] font-black tracking-[0.4em] uppercase text-slate-500">Global Presence</span>
           </motion.div>
 
           <h2 className="text-3xl sm:text-5xl font-light text-slate-500 tracking-tight leading-none">Let's Build</h2>
           <h1 className="text-6xl sm:text-8xl lg:text-[110px] font-black text-white uppercase leading-[0.8] tracking-tighter mt-2">
-            YOUR <span className="text-[#FF5722]">LEGACY</span>
+            YOUR <span className="text-[#9E7C2E]">LEGACY</span>
           </h1>
 
           <p className="mt-8 text-xs sm:text-sm font-bold text-slate-400 uppercase tracking-widest leading-relaxed max-w-md">
@@ -52,16 +52,16 @@ export default function ContactSlide() {
 
           <div className="mt-12 flex flex-col sm:flex-row gap-6">
             <motion.button 
-              whileHover={{ scale: 1.05, backgroundColor: '#ffffff', color: '#0F172A' }}
+              whileHover={{ scale: 1.05, backgroundColor: '#ffffff', color: '#0F2F4F' }}
               whileTap={{ scale: 0.95 }}
-              className="bg-[#FF5722] text-white px-8 py-5 font-black uppercase text-[11px] tracking-[0.3em] flex items-center justify-center gap-4 shadow-2xl shadow-orange-500/20 transition-colors"
+              className="bg-[#9E7C2E] text-white px-8 py-5 font-black uppercase text-[11px] tracking-[0.3em] flex items-center justify-center gap-4 shadow-2xl shadow-orange-500/20 transition-colors"
             >
               Start a Project <ArrowRight size={18} />
             </motion.button>
             
             <div className="flex items-center gap-6 px-4">
               {[Instagram, Linkedin, Twitter].map((Icon, i) => (
-                <Icon key={i} size={20} className="text-slate-500 hover:text-[#FF5722] cursor-pointer transition-colors" />
+                <Icon key={i} size={20} className="text-slate-500 hover:text-[#9E7C2E] cursor-pointer transition-colors" />
               ))}
             </div>
           </div>
@@ -78,7 +78,7 @@ export default function ContactSlide() {
               whileHover={{ x: 10, backgroundColor: 'rgba(255, 255, 255, 0.05)' }}
               className="group p-6 sm:p-8 border border-white/5 rounded-3xl flex items-center gap-6 cursor-pointer transition-all duration-500"
             >
-              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white/5 rounded-2xl flex items-center justify-center text-[#FF5722] group-hover:bg-[#FF5722] group-hover:text-white transition-all duration-500">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white/5 rounded-2xl flex items-center justify-center text-[#9E7C2E] group-hover:bg-[#9E7C2E] group-hover:text-white transition-all duration-500">
                 {item.icon}
               </div>
               
@@ -86,11 +86,11 @@ export default function ContactSlide() {
                 <div className="flex items-center gap-3 mb-1">
                   <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500">{item.title}</h4>
                   <div className="h-[1px] w-4 bg-white/10" />
-                  <span className="text-[9px] font-bold text-[#FF5722] uppercase tracking-tighter opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span className="text-[9px] font-bold text-[#9E7C2E] uppercase tracking-tighter opacity-0 group-hover:opacity-100 transition-opacity">
                     {item.sub}
                   </span>
                 </div>
-                <p className="text-lg sm:text-2xl font-black text-white uppercase tracking-tighter group-hover:text-[#FF5722] transition-colors">
+                <p className="text-lg sm:text-2xl font-black text-white uppercase tracking-tighter group-hover:text-[#9E7C2E] transition-colors">
                   {item.text}
                 </p>
               </div>
@@ -100,7 +100,7 @@ export default function ContactSlide() {
           {/* Website Link Card */}
           <motion.div 
             whileHover={{ scale: 0.98 }}
-            className="mt-4 p-8 bg-[#FF5722] rounded-3xl flex items-center justify-between group cursor-pointer"
+            className="mt-4 p-8 bg-[#9E7C2E] rounded-3xl flex items-center justify-between group cursor-pointer"
           >
             <div className="flex items-center gap-4">
               <Globe className="text-white" size={24} />
@@ -114,7 +114,7 @@ export default function ContactSlide() {
       {/* --- MINIMAL FOOTER --- */}
       <div className="h-20 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between px-6 sm:px-12 lg:px-24 py-4 gap-4">
         <p className="text-[9px] font-black text-slate-500 uppercase tracking-[0.4em]">
-          © 2026 SK Prime Group <span className="text-[#FF5722] mx-2">•</span> Building Excellence
+          © 2026 SK Prime Group <span className="text-[#9E7C2E] mx-2">•</span> Building Excellence
         </p>
         <div className="flex gap-8">
           <span className="text-[9px] font-black text-slate-600 uppercase tracking-widest cursor-pointer hover:text-white transition-colors">Privacy Policy</span>

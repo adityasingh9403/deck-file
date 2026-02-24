@@ -20,15 +20,15 @@ export default function HeroSlide() {
       initial="initial"
       animate="animate"
       exit="exit"
-      className="relative min-h-screen w-full bg-white text-[#0F172A] overflow-x-hidden flex flex-col"
+      className="relative min-h-screen w-full bg-white text-[#0F2F4F] overflow-x-hidden flex flex-col"
     >
       {/* --- TOP NAV / LOGO AREA --- */}
       <div className="absolute top-6 left-6 md:top-8 md:left-12 z-20">
         <div className="flex items-center gap-2">
-          <div className="w-6 h-6 md:w-8 md:h-8 bg-[#FF5722] rounded-sm rotate-12 flex items-center justify-center">
+          <div className="w-6 h-6 md:w-8 md:h-8 bg-[#9E7C2E] rounded-sm rotate-12 flex items-center justify-center">
             <span className="text-white font-black text-[10px] md:text-xs italic">SK</span>
           </div>
-          <h1 className="text-lg md:text-2xl font-black tracking-tighter text-[#0F172A]">SK PRIME</h1>
+          <h1 className="text-lg md:text-2xl font-black tracking-tighter text-[#0F2F4F]">SK PRIME</h1>
         </div>
       </div>
 
@@ -47,20 +47,17 @@ export default function HeroSlide() {
               alt="Corporate Building"
               className="w-full h-full object-cover grayscale opacity-60 mix-blend-multiply"
             />
-            <div className="absolute inset-0 bg-gradient-to-br from-transparent to-[#0F172A]/20" />
+            <div className="absolute inset-0 bg-gradient-to-br from-transparent to-[#0F2F4F]/20" />
           </div>
         </motion.div>
 
         {/* --- LEFT CONTENT AREA --- */}
         <div className="w-full md:w-1/2 px-6 sm:px-12 md:pl-24 z-10 py-10 md:py-0">
-          <motion.div variants={fadeRight} className="mb-4 inline-block border border-slate-200 px-3 py-1 rounded-sm shadow-sm">
-            <span className="text-[8px] md:text-[10px] font-bold text-[#FF5722] uppercase tracking-widest">ISO 9001:2015 Certified</span>
-          </motion.div>
 
           <motion.div variants={fadeRight} className="space-y-0">
             <h2 className="text-xl sm:text-3xl md:text-5xl font-light text-slate-500 tracking-tight leading-none">We are</h2>
-            <h1 className="text-4xl sm:text-6xl lg:text-[90px] font-black text-[#FF5722] uppercase leading-[0.9] tracking-tighter my-2">
-              SK Prime <span className="text-[#0F172A]">Group</span>
+            <h1 className="text-4xl sm:text-6xl lg:text-[90px] font-black text-[#9E7C2E] uppercase leading-[0.9] tracking-tighter my-2">
+              SK Prime <span className="text-[#0F2F4F]">Group</span>
             </h1>
             <h2 className="text-xl sm:text-3xl md:text-5xl font-light text-slate-500 tracking-tight leading-none">Private Limited</h2>
           </motion.div>
@@ -80,7 +77,7 @@ export default function HeroSlide() {
         initial={{ y: 50 }}
         animate={{ y: 0 }}
         transition={{ delay: 1, duration: 0.6 }}
-        className="w-full grid grid-cols-1 sm:grid-cols-3 bg-[#FF5722]"
+        className="w-full grid grid-cols-1 sm:grid-cols-3 bg-[#9E7C2E]"
       >
         <div className="h-14 md:h-20 flex items-center justify-center border-b sm:border-b-0 sm:border-r border-white/10 hover:bg-black/5 transition-colors cursor-pointer p-4">
           <div className="flex items-center gap-2 md:gap-3 text-white">

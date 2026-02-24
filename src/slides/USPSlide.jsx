@@ -47,7 +47,7 @@ export default function USPSlide() {
       initial="initial"
       animate="animate"
       exit="exit"
-      className="relative min-h-screen w-full bg-white text-[#0F172A] overflow-hidden flex flex-col"
+      className="relative min-h-screen w-full bg-white text-[#0F2F4F] overflow-hidden flex flex-col"
     >
       {/* --- CONTENT WRAPPER --- */}
       <div className="flex-grow flex flex-col lg:flex-row">
@@ -55,7 +55,7 @@ export default function USPSlide() {
         {/* --- LEFT: HEADING SECTION (40%) --- */}
         <div className="w-full lg:w-[40%] p-8 sm:p-12 lg:p-24 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-slate-100">
           <motion.div variants={fadeInUp} className="flex items-center gap-4 mb-8">
-            <div className="p-2 bg-[#FF5722] rounded-lg">
+            <div className="p-2 bg-[#9E7C2E] rounded-lg">
               <Target size={18} className="text-white fill-white" />
             </div>
             <span className="text-[10px] font-black tracking-[0.4em] uppercase text-slate-400">Competitive Edge</span>
@@ -63,12 +63,12 @@ export default function USPSlide() {
 
           <motion.div variants={fadeInUp}>
             <h2 className="text-3xl sm:text-4xl font-light text-slate-300 tracking-tight leading-none italic">The Strategic</h2>
-            <h1 className="text-6xl sm:text-7xl lg:text-[100px] font-black text-[#0F172A] uppercase leading-[0.8] tracking-tighter mt-4">
-              CORE <span className="text-[#FF5722]">USP</span>
+            <h1 className="text-6xl sm:text-7xl lg:text-[100px] font-black text-[#0F2F4F] uppercase leading-[0.8] tracking-tighter mt-4">
+              CORE <span className="text-[#9E7C2E]">USP</span>
             </h1>
           </motion.div>
 
-          <motion.p variants={fadeInUp} className="mt-10 text-slate-400 text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] leading-relaxed max-w-sm border-l-2 border-[#FF5722] pl-6">
+          <motion.p variants={fadeInUp} className="mt-10 text-slate-400 text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] leading-relaxed max-w-sm border-l-2 border-[#9E7C2E] pl-6">
             Four pillars of excellence that define the SK Prime Group's journey towards a modernized future.
           </motion.p>
         </div>
@@ -79,16 +79,16 @@ export default function USPSlide() {
             <motion.div 
               key={i}
               variants={fadeInUp}
-              whileHover={{ backgroundColor: "#0F172A" }}
+              whileHover={{ backgroundColor: "#0F2F4F" }}
               className={`group relative p-10 sm:p-16 flex flex-col justify-between transition-all duration-700 cursor-default overflow-hidden ${usp.color}/30`}
             >
               <div className="relative z-10">
                 {/* Icon Box */}
-                <div className="w-16 h-16 bg-white flex items-center justify-center text-[#FF5722] group-hover:bg-[#FF5722] group-hover:text-white transition-all duration-500 rounded-2xl shadow-sm mb-12 group-hover:-translate-y-2">
+                <div className="w-16 h-16 bg-white flex items-center justify-center text-[#9E7C2E] group-hover:bg-[#9E7C2E] group-hover:text-white transition-all duration-500 rounded-2xl shadow-sm mb-12 group-hover:-translate-y-2">
                   {React.cloneElement(usp.icon, { size: 30, strokeWidth: 1.5 })}
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-tighter text-[#0F172A] group-hover:text-white mb-4 transition-colors">
+                <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-tighter text-[#0F2F4F] group-hover:text-white mb-4 transition-colors">
                   {usp.title}
                 </h3>
                 <p className="text-[11px] sm:text-[12px] text-slate-400 font-bold uppercase tracking-widest leading-relaxed group-hover:text-slate-300 transition-colors">
@@ -102,7 +102,7 @@ export default function USPSlide() {
               </span>
 
               {/* Hover Line Animation */}
-              <div className="absolute bottom-0 left-0 h-1 bg-[#FF5722] w-0 group-hover:w-full transition-all duration-700" />
+              <div className="absolute bottom-0 left-0 h-1 bg-[#9E7C2E] w-0 group-hover:w-full transition-all duration-700" />
             </motion.div>
           ))}
         </div>

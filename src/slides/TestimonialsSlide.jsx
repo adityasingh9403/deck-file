@@ -39,7 +39,7 @@ export default function TestimonialsSlide() {
       initial="initial"
       animate="animate"
       exit="exit"
-      className="relative min-h-screen w-full bg-white text-[#0F172A] overflow-x-hidden flex flex-col"
+      className="relative min-h-screen w-full bg-white text-[#0F2F4F] overflow-x-hidden flex flex-col"
     >
       {/* --- BACKGROUND DECOR --- */}
       <div className="absolute top-0 right-0 w-full lg:w-1/2 h-full bg-slate-50/50 -skew-x-6 translate-x-20 pointer-events-none" />
@@ -51,26 +51,26 @@ export default function TestimonialsSlide() {
           animate={{ opacity: 1, x: 0 }}
           className="flex items-center gap-4 mb-6"
         >
-          <Zap size={20} className="text-[#FF5722] fill-[#FF5722]" />
+          <Zap size={20} className="text-[#9E7C2E] fill-[#9E7C2E]" />
           <span className="text-[10px] font-black tracking-[0.4em] uppercase text-slate-400">Success Stories</span>
         </motion.div>
 
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <h2 className="text-3xl md:text-5xl font-light text-slate-300 tracking-tight leading-none">Voices of</h2>
-            <h1 className="text-6xl sm:text-7xl lg:text-[110px] font-black text-[#0F172A] uppercase leading-[0.8] tracking-tighter mt-2">
-              TRUST <span className="text-[#FF5722]">& CO.</span>
+            <h1 className="text-6xl sm:text-7xl lg:text-[110px] font-black text-[#0F2F4F] uppercase leading-[0.8] tracking-tighter mt-2">
+              TRUST <span className="text-[#9E7C2E]">& CO.</span>
             </h1>
           </motion.div>
           
-          <div className="bg-[#0F172A] p-4 sm:p-6 rounded-2xl hidden md:flex items-center gap-6">
-            <div className="text-[#FF5722]">
+          <div className="bg-[#0F2F4F] p-4 sm:p-6 rounded-2xl hidden md:flex items-center gap-6">
+            <div className="text-[#9E7C2E]">
               <MessageSquare size={32} strokeWidth={2.5} />
             </div>
             <div>
               <p className="text-white text-[10px] font-black tracking-widest uppercase mb-1">Total Satisfaction</p>
               <div className="flex gap-1">
-                {[...Array(5)].map((_, i) => <Star key={i} size={12} className="fill-[#FF5722] text-[#FF5722]" />)}
+                {[...Array(5)].map((_, i) => <Star key={i} size={12} className="fill-[#9E7C2E] text-[#9E7C2E]" />)}
               </div>
             </div>
           </div>
@@ -88,22 +88,22 @@ export default function TestimonialsSlide() {
               transition={{ delay: i * 0.2 }}
               className={`group relative flex flex-col ${rev.offset}`}
             >
-              <div className="bg-white p-8 lg:p-10 border border-slate-100 shadow-sm hover:shadow-2xl hover:border-[#FF5722]/20 transition-all duration-500 rounded-[2rem] relative z-10 group-hover:-translate-y-2">
-                <Quote className="text-[#FF5722]/10 absolute top-8 right-8 group-hover:text-[#FF5722]/20 transition-colors" size={60} />
+              <div className="bg-white p-8 lg:p-10 border border-slate-100 shadow-sm hover:shadow-2xl hover:border-[#9E7C2E]/20 transition-all duration-500 rounded-[2rem] relative z-10 group-hover:-translate-y-2">
+                <Quote className="text-[#9E7C2E]/10 absolute top-8 right-8 group-hover:text-[#9E7C2E]/20 transition-colors" size={60} />
                 
                 <div className="flex gap-1 mb-6">
                   {[...Array(rev.rating)].map((_, idx) => (
-                    <Star key={idx} size={12} className="fill-[#FF5722] text-[#FF5722]" />
+                    <Star key={idx} size={12} className="fill-[#9E7C2E] text-[#9E7C2E]" />
                   ))}
                 </div>
 
-                <p className="text-[#0F172A] font-bold text-lg lg:text-xl leading-snug tracking-tight mb-8">
+                <p className="text-[#0F2F4F] font-bold text-lg lg:text-xl leading-snug tracking-tight mb-8">
                   "{rev.text}"
                 </p>
 
                 <div className="mt-auto pt-8 border-t border-slate-50">
-                  <h4 className="text-[12px] font-black uppercase tracking-widest text-[#0F172A]">{rev.name}</h4>
-                  <span className="text-[10px] font-bold text-[#FF5722] uppercase tracking-tighter opacity-70 block mt-1">{rev.role}</span>
+                  <h4 className="text-[12px] font-black uppercase tracking-widest text-[#0F2F4F]">{rev.name}</h4>
+                  <span className="text-[10px] font-bold text-[#9E7C2E] uppercase tracking-tighter opacity-70 block mt-1">{rev.role}</span>
                 </div>
               </div>
 
@@ -118,7 +118,7 @@ export default function TestimonialsSlide() {
       <motion.div 
         initial={{ y: 50 }}
         animate={{ y: 0 }}
-        className="w-full bg-[#0F172A] py-6 flex flex-col sm:flex-row items-center justify-center gap-4 border-t border-white/5"
+        className="w-full bg-[#0F2F4F] py-6 flex flex-col sm:flex-row items-center justify-center gap-4 border-t border-white/5"
       >
         <p className="text-[8px] sm:text-[10px] font-black text-white/40 uppercase tracking-[0.5em] text-center px-4">
           Building Relationships • Defining Legacy • Empowering People

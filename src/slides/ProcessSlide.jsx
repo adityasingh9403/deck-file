@@ -13,7 +13,7 @@ export default function ProcessSlide() {
     { no: "01", title: "Discovery", desc: "Analyzing unorganized markets & gaps.", icon: <Search />, color: "bg-slate-50" },
     { no: "02", title: "Strategy", desc: "Designing scalable industrial roadmaps.", icon: <PenTool />, color: "bg-white" },
     { no: "03", title: "Execution", desc: "Agile development & talent scouting.", icon: <Code />, color: "bg-slate-50" },
-    { no: "04", title: "Impact", desc: "Delivering lasting digital & physical legacy.", icon: <Rocket />, color: "bg-[#0F172A]" }
+    { no: "04", title: "Impact", desc: "Delivering lasting digital & physical legacy.", icon: <Rocket />, color: "bg-[#0F2F4F]" }
   ];
 
   return (
@@ -22,18 +22,18 @@ export default function ProcessSlide() {
       initial="initial"
       animate="animate"
       exit="exit"
-      className="relative min-h-screen w-full bg-white text-[#0F172A] overflow-x-hidden flex flex-col"
+      className="relative min-h-screen w-full bg-white text-[#0F2F4F] overflow-x-hidden flex flex-col"
     >
       {/* --- SIDE HEADER SECTION --- */}
       <div className="w-full px-6 sm:px-12 lg:px-24 pt-20 md:pt-24 pb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div className="z-10">
           <motion.div initial={{ x: -20, opacity: 0 }} animate={{ x: 0, opacity: 1 }} className="flex items-center gap-4 mb-4">
-            <Zap size={20} className="text-[#FF5722] fill-[#FF5722]" />
+            <Zap size={20} className="text-[#9E7C2E] fill-[#9E7C2E]" />
             <span className="text-[10px] font-black tracking-[0.4em] uppercase text-slate-400">Operational Lifecycle</span>
           </motion.div>
           <h2 className="text-3xl md:text-5xl font-light text-slate-400 tracking-tight leading-none">The Smart</h2>
-          <h1 className="text-6xl md:text-8xl lg:text-[110px] font-black text-[#0F172A] uppercase leading-[0.8] tracking-tighter mt-2">
-            WORK <span className="text-[#FF5722]">FLOW</span>
+          <h1 className="text-6xl md:text-8xl lg:text-[110px] font-black text-[#0F2F4F] uppercase leading-[0.8] tracking-tighter mt-2">
+            WORK <span className="text-[#9E7C2E]">FLOW</span>
           </h1>
         </div>
         
@@ -56,18 +56,18 @@ export default function ProcessSlide() {
             className={`relative flex-1 group min-h-[250px] lg:min-h-0 p-8 sm:p-12 flex flex-col justify-between transition-all duration-700 ease-in-out border-b lg:border-b-0 lg:border-r border-slate-100 ${step.color}`}
           >
             {/* Step Number Background */}
-            <span className={`absolute top-10 right-10 text-7xl lg:text-8xl font-black opacity-[0.03] group-hover:opacity-[0.08] transition-opacity uppercase tracking-tighter ${i === 3 ? 'text-white' : 'text-[#0F172A]'}`}>
+            <span className={`absolute top-10 right-10 text-7xl lg:text-8xl font-black opacity-[0.03] group-hover:opacity-[0.08] transition-opacity uppercase tracking-tighter ${i === 3 ? 'text-white' : 'text-[#0F2F4F]'}`}>
               {step.no}
             </span>
 
             <div className="relative z-10">
               <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-8 transition-all duration-500 shadow-xl 
-                ${i === 3 ? 'bg-[#FF5722] text-white' : 'bg-white group-hover:bg-[#FF5722] text-[#FF5722] group-hover:text-white'}`}>
+                ${i === 3 ? 'bg-[#9E7C2E] text-white' : 'bg-white group-hover:bg-[#9E7C2E] text-[#9E7C2E] group-hover:text-white'}`}>
                 {React.cloneElement(step.icon, { size: 22 })}
               </div>
               
               <h3 className={`text-2xl lg:text-3xl font-black uppercase tracking-tighter mb-4 transition-colors
-                ${i === 3 ? 'text-white' : 'text-[#0F172A]'}`}>
+                ${i === 3 ? 'text-white' : 'text-[#0F2F4F]'}`}>
                 {step.title}
               </h3>
               
@@ -78,8 +78,8 @@ export default function ProcessSlide() {
             </div>
 
             <div className="mt-8 flex items-center gap-4 group-hover:translate-x-2 transition-transform duration-500">
-              <div className={`h-[2px] w-8 transition-all duration-500 ${i === 3 ? 'bg-white/20 group-hover:w-16 group-hover:bg-[#FF5722]' : 'bg-slate-200 group-hover:w-16 group-hover:bg-[#FF5722]'}`} />
-              <ChevronRight size={18} className={i === 3 ? 'text-[#FF5722]' : 'text-slate-200 group-hover:text-[#FF5722]'} />
+              <div className={`h-[2px] w-8 transition-all duration-500 ${i === 3 ? 'bg-white/20 group-hover:w-16 group-hover:bg-[#9E7C2E]' : 'bg-slate-200 group-hover:w-16 group-hover:bg-[#9E7C2E]'}`} />
+              <ChevronRight size={18} className={i === 3 ? 'text-[#9E7C2E]' : 'text-slate-200 group-hover:text-[#9E7C2E]'} />
             </div>
 
             {/* Hover Image Overlay (Desktop Only) */}

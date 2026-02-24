@@ -59,19 +59,19 @@ export default function TechExpertiseSlide() {
       initial="initial"
       animate="animate"
       exit="exit"
-      className="relative min-h-screen w-full bg-[#0F172A] text-white overflow-hidden flex flex-col"
+      className="relative min-h-screen w-full bg-[#0F2F4F] text-white overflow-hidden flex flex-col"
     >
       {/* --- TECH GRID BACKGROUND --- */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 opacity-[0.05]"
-          style={{ backgroundImage: 'linear-gradient(#FF5722 1px, transparent 1px), linear-gradient(90deg, #FF5722 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A] via-transparent to-[#0F172A]" />
+          style={{ backgroundImage: 'linear-gradient(#9E7C2E 1px, transparent 1px), linear-gradient(90deg, #9E7C2E 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0F2F4F] via-transparent to-[#0F2F4F]" />
       </div>
 
       {/* --- TOP BRANDING --- */}
       <div className="p-8 lg:p-12 z-20 flex items-center gap-4">
-        <div className="p-2 bg-[#FF5722]/10 rounded-lg border border-[#FF5722]/20">
-          <Zap size={18} className="text-[#FF5722] fill-[#FF5722]" />
+        <div className="p-2 bg-[#9E7C2E]/10 rounded-lg border border-[#9E7C2E]/20">
+          <Zap size={18} className="text-[#9E7C2E] fill-[#9E7C2E]" />
         </div>
         <span className="text-[10px] font-black tracking-[0.4em] uppercase text-slate-500">Technological Foundation</span>
       </div>
@@ -99,12 +99,12 @@ export default function TechExpertiseSlide() {
               >
                 <h2 className="text-2xl md:text-3xl font-light text-slate-500 tracking-tight leading-none italic">Modern</h2>
                 <h1 className="text-7xl md:text-[100px] lg:text-[140px] font-black text-white uppercase leading-[0.8] tracking-tighter mt-4">
-                  TECH<br /><span className="text-[#FF5722]">STACK</span>
+                  TECH<br /><span className="text-[#9E7C2E]">STACK</span>
                 </h1>
 
                 {/* Orbital Rings (Decor) */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border border-[#FF5722]/5 rounded-full -z-10 animate-pulse" />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] border border-[#FF5722]/5 rounded-full -z-10" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border border-[#9E7C2E]/5 rounded-full -z-10 animate-pulse" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] border border-[#9E7C2E]/5 rounded-full -z-10" />
               </motion.div>
             </div>
 
@@ -138,7 +138,7 @@ function TechNode({ tech, anim, align }) {
     <motion.div variants={anim} className={`group flex flex-col ${align === 'right' ? 'lg:items-end' : 'lg:items-start'}`}>
       <div className={`
         flex items-center gap-5 p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md
-        group-hover:bg-[#FF5722]/5 group-hover:border-[#FF5722]/40 transition-all duration-500 w-full max-w-sm
+        group-hover:bg-[#9E7C2E]/5 group-hover:border-[#9E7C2E]/40 transition-all duration-500 w-full max-w-sm
         ${align === 'right' ? 'lg:flex-row' : 'lg:flex-row-reverse'}
       `}>
         <div className="flex-grow">
@@ -149,7 +149,7 @@ function TechNode({ tech, anim, align }) {
             {tech.tools}
           </p>
         </div>
-        <div className="shrink-0 w-12 h-12 flex items-center justify-center bg-white/5 rounded-xl text-[#FF5722] group-hover:bg-[#FF5722] group-hover:text-white transition-all duration-500 group-hover:rotate-12">
+        <div className="shrink-0 w-12 h-12 flex items-center justify-center bg-white/5 rounded-xl text-[#9E7C2E] group-hover:bg-[#9E7C2E] group-hover:text-white transition-all duration-500 group-hover:rotate-12">
           {React.cloneElement(tech.icon, { size: 22 })}
         </div>
       </div>

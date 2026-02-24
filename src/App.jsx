@@ -64,7 +64,7 @@ export default function App() {
   // 1. MOBILE VIEW (< 1080px): Website Vertical Scroll Mode
   if (isMobile) {
     return (
-      <div className="w-full bg-white selection:bg-[#FF5722] selection:text-white overflow-y-auto">
+      <div className="w-full bg-white selection:bg-[#9E7C2E] selection:text-white overflow-y-auto">
         <div className="flex flex-col">
           {SLIDES_LIST.map((Slide, i) => (
             <section key={i} className="w-full border-b border-slate-50 min-h-screen">
@@ -78,7 +78,7 @@ export default function App() {
 
   // 2. DESKTOP VIEW (> 1080px): Presentation Slide Mode
   return (
-    <div className="h-screen w-full bg-white overflow-hidden selection:bg-[#FF5722] selection:text-white">
+    <div className="h-screen w-full bg-white overflow-hidden selection:bg-[#9E7C2E] selection:text-white">
       
       {/* Indicators for Slide Mode */}
       <SlideIndicators 
@@ -104,7 +104,7 @@ export default function App() {
 
       {/* Navigation Hint */}
       <div className="absolute bottom-6 left-12 z-[100] opacity-30 pointer-events-none">
-        <p className="text-[9px] font-black uppercase tracking-[0.4em] text-[#0F172A]">
+        <p className="text-[9px] font-black uppercase tracking-[0.4em] text-[#0F2F4F]">
           Use keyboard arrows to navigate
         </p>
       </div>
