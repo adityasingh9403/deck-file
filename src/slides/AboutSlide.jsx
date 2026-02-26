@@ -57,7 +57,7 @@ export default function AboutUsSlide() {
           {/* Vision Heading */}
           <motion.div variants={fadeInUp} className="flex items-center gap-3 my-6">
             <span className="h-[1px] w-8 bg-[#9E7C2E]"></span>
-            <span className="text-[10px] font-black tracking-[0.4em] uppercase text-[#9E7C2E]">The SK Prime Vision</span>
+            <span className="text-[10px] font-black tracking-[0.4em] uppercase text-[#9E7C2E]">The SK Prime Mission & Vision</span>
           </motion.div>
 
           {/* Mission & Vision Cards - Mobile Pe Stack (1 col), Tablet+ Pe 2 col */}
@@ -125,30 +125,7 @@ export default function AboutUsSlide() {
                 </motion.div>
               ))}
             </div>
-
-            {/* Bottom Status Stats */}
-            <div className="mt-10 pt-6 border-t border-white/10 flex items-center justify-between">
-              <div>
-                <p className="text-white text-xl sm:text-2xl font-black">100%</p>
-                <p className="text-[#9E7C2E] text-[8px] font-black uppercase tracking-widest">Commitment</p>
-              </div>
-              <div className="h-8 w-[1px] bg-white/10 mx-4" />
-              <div className="text-right">
-                <p className="text-white text-xl sm:text-2xl font-black uppercase">Global</p>
-                <p className="text-[#9E7C2E] text-[8px] font-black uppercase tracking-widest">Presence</p>
-              </div>
-            </div>
           </div>
-        </div>
-      </div>
-
-      {/* Compact Footer */}
-      <div className="h-10 bg-white border-t border-slate-100 flex items-center px-6 justify-between shrink-0">
-        <p className="text-[8px] font-bold text-slate-400 uppercase tracking-widest">
-          SK Prime Group Corporate Profile
-        </p>
-        <div className="flex gap-2 items-center">
-          <CheckCircle2 size={12} className="text-[#9E7C2E]" />
         </div>
       </div>
     </motion.div>

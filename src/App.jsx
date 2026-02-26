@@ -111,12 +111,6 @@ export default function App() {
           </motion.div>
         </AnimatePresence>
       </main>
-
-      <div className="absolute bottom-6 left-12 z-[100] opacity-30 pointer-events-none">
-        <p className="text-[9px] font-black uppercase tracking-[0.4em] text-[#0F2F4F]">
-          Use keyboard arrows to navigate
-        </p>
-      </div>
     </div>
   );
 }

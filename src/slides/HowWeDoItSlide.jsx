@@ -28,7 +28,7 @@ export default function HowWeDoItSlide() {
           <span className="text-[10px] font-black tracking-widest uppercase text-[#9E7C2E]">The Lifecycle Loop</span>
         </div>
         <h1 className="text-4xl lg:text-6xl font-black text-[#0F2F4F] uppercase tracking-tighter">
-          SDLC <span className="text-[#9E7C2E]">ENGINEERING</span>
+          SDLC <span className="text-[#9E7C2E]">Process</span>
         </h1>
       </div>
 

@@ -79,9 +79,9 @@ export default function HeroSlide() {
         transition={{ delay: 0.8, duration: 0.5 }}
         className="w-full grid grid-cols-1 sm:grid-cols-3 bg-[#9E7C2E] mt-auto"
       >
-        <ContactItem icon={<Phone size={18} />} text="+91 91745 050XX" />
+        <ContactItem icon={<Phone size={18} />} text="+918878740101" />
         <ContactItem icon={<Mail size={18} />} text="contact@skprimegroup.in" isCenter />
-        <ContactItem icon={<Globe size={18} />} text="skprimegroup.com" />
+        <ContactItem icon={<Globe size={18} />} text="www.skprimegroup.com" />
       </motion.div>
     </motion.div>
   );

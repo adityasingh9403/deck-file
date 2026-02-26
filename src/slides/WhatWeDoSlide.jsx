@@ -87,7 +87,7 @@ export default function WhatWeDoSlide() {
 
 
 
-      img: "https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?q=80&w=1000"
+      img: "https://executiveevents.in/userfiles/Services/632b3947c41349968f876cec50845c09.jpg"
 
 
 

@@ -73,7 +73,7 @@ export default function TechExpertiseSlide() {
           <motion.div variants={fadeInUp}>
             <h2 className="text-2xl sm:text-3xl font-light text-slate-300 tracking-tight leading-none italic uppercase">Powering</h2>
             <h1 className="text-5xl sm:text-7xl xl:text-8xl font-black text-[#0F2F4F] uppercase leading-[0.85] tracking-tighter mt-2">
-              TECH<span className="text-[#9E7C2E]">STACK</span>
+              OUR<br></br><span className="text-[#9E7C2E]">EXPERTISE</span>
             </h1>
           </motion.div>
 
