@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Monitor, Trophy, Calendar, Building2, ChevronRight, Zap, ArrowRight } from 'lucide-react';
+import { Monitor, Trophy, Calendar, Building2, Zap, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 export default function WhatWeDoSlide() {
   const containerVars = {
@@ -10,38 +10,119 @@ export default function WhatWeDoSlide() {
   };
 
   const fadeInUp = {
-    initial: { y: 30, opacity: 0 },
-    animate: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } }
+    initial: { y: 20, opacity: 0 },
+    animate: { y: 0, opacity: 1, transition: { duration: 0.5 } }
   };
 
   const verticals = [
+
     {
       title: "SK Prime Infotech",
-      icon: <Monitor size={24} />,
-      desc: "Delivering high-performance software, AI-integrated POS systems, and cloud-native solutions for global enterprises.",
-      color: "#9E7C2E",
-      img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop"
+      icon: <Monitor size={20} />,
+
+      desc: "SK Prime Infotech is a growing IT startup company focused on delivering smart digital solutions and professional training.",
+
+      services: ["Website Development (Static & Dynamic)", "Web & Mobile Application Development", "Social Media Management", "Banner Designing & Creative Branding", "Training & Development Programs"],
+
+      desc2: "We not only provide IT services but also train and mentor young professionals to develop technical and digital skills that meet modern industry standards.",
+
+      img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000"
     },
+
+
+
     {
+
+
+
       title: "SK Prime Sports",
-      icon: <Trophy size={24} />,
-      desc: "Revolutionizing grassroots talent scouting and professional league management through the KCPL network.",
-      color: "#0F2F4F",
-      img: "https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&q=80&w=1000"
+
+
+
+      icon: <Trophy size={20} />,
+
+
+
+      desc: "SK Prime Sports is dedicated to promoting sports and physical development through the supply of quality sports equipment.",
+
+
+
+      services: ["Supply of Sports Equipment", "Equipment for Schools, Colleges & Institutions", "Support for Sports Clubs & Academies"],
+
+
+
+      desc2: "We aim to encourage a healthy and active lifestyle by ensuring access to reliable and professional-grade sports materials.",
+
+
+
+      img: "https://images.unsplash.com/photo-1504450758481-7338eba7524a?q=80&w=1000"
+
+
+
     },
+
+
+
     {
+
+
+
       title: "SK Prime Events",
-      icon: <Calendar size={24} />,
-      desc: "Executing grand-scale corporate experiences and sports events with precision and visionary planning.",
-      color: "#0F2F4F",
-      img: "https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?q=80&w=1000&auto=format&fit=crop"
+
+
+
+      icon: <Calendar size={20} />,
+
+
+
+      desc: "SK Prime Events specializes in professional event planning and management.",
+
+
+
+      services: ["Sports Event Management", "Corporate Events", "Institutional & Community Programs", "Promotional & Special Events"],
+
+
+
+      desc2: "We focus on delivering well-organized, impactful, and memorable events with attention to every detail.",
+
+
+
+      img: "https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?q=80&w=1000"
+
+
+
     },
+
+
+
     {
+
+
+
       title: "Verma Construction",
-      icon: <Building2 size={24} />,
-      desc: "Developing premium infrastructure and modern architectural marvels with a focus on sustainable urban living.",
-      color: "#9E7C2E",
-      img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop"
+
+
+
+      icon: <Building2 size={20} />,
+
+
+
+      desc: "Verma Properties & Construction is the real estate and infrastructure division of SK Prime Group, dedicated to quality construction and property solutions.",
+
+
+
+      services: ["Residential & Commercial Building Construction", "Construction of Offices & Apartment Complexes", "Property Development & Ownership Projects", "Brokering & Selling of Flats and Land", "Real Estate Consultation"],
+
+
+
+      desc2: "We assist clients in buying, selling, and developing properties with transparency and professionalism. From constructing buildings to facilitating property transactions, we ensure reliable service and long-term value for our clients.",
+
+
+
+      img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000"
+
+
+
     }
   ];
 
@@ -51,85 +132,71 @@ export default function WhatWeDoSlide() {
       initial="initial"
       animate="animate"
       exit="exit"
-      className="relative min-h-screen w-full bg-[#F8FAFC] text-[#0F2F4F] overflow-x-hidden flex flex-col"
+      className="relative h-screen w-full bg-[#F8FAFC] text-[#0F2F4F] flex flex-col overflow-hidden"
     >
-      {/* --- HEADER SECTION --- */}
-      <div className="w-full px-6 sm:px-12 lg:px-24 pt-20 md:pt-24 pb-12">
-        <motion.div variants={fadeInUp} className="flex items-center gap-3 mb-4">
-          <Zap size={18} className="text-[#9E7C2E] fill-[#9E7C2E]" />
-          <span className="text-[10px] font-black tracking-[0.4em] uppercase text-slate-400">Our Strategic Domains</span>
-        </motion.div>
+      {/* --- HEADER ---
+          pt-32 (Mobile) / pt-40 (Desktop): Taaki fixed logo se niche rahe.
+      */}
+      <div className="w-full px-6 md:px-12 lg:px-20 pt-32 md:pt-40 pb-6 shrink-0">
 
-        <motion.div variants={fadeInUp} className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div className="max-w-2xl">
-            <h2 className="text-2xl sm:text-4xl font-light text-slate-400 tracking-tight leading-none">Diverse</h2>
-            <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black text-[#0F2F4F] uppercase leading-[0.9] tracking-tighter mt-2">
-              EXPERT <span className="text-[#9E7C2E]">ISE</span>
-            </h1>
-          </div>
-          <p className="text-slate-500 text-xs sm:text-sm font-bold uppercase tracking-widest max-w-[250px] border-l-2 border-[#9E7C2E] pl-4 mb-2">
-            Multi-disciplinary excellence across four core industries.
+        <motion.div variants={fadeInUp} className="flex flex-col md:flex-row md:items-end justify-between gap-2">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-[#0F2F4F] uppercase leading-none tracking-tighter">
+            WHO ARE <span className="text-[#9E7C2E]">WE</span>
+          </h1>
+          <p className="text-slate-500 text-[9px] md:text-xs font-bold uppercase tracking-widest max-w-[280px] border-l-2 border-[#9E7C2E] pl-3 mb-1">
+            Excellence across diverse industries with a unified vision.
           </p>
+        </motion.div>
+        <motion.div variants={fadeInUp} className="flex items-center gap-2 mb-2">
+          <span className="text-[30px] font-black tracking-[0.4em] uppercase text-slate-400">OUR DIVISIONS</span>
         </motion.div>
       </div>
 
-      {/* --- MASONRY GRID SECTION --- */}
-      <div className="flex-grow px-6 sm:px-12 lg:px-24 pb-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 h-full">
+      {/* --- SCROLLABLE CONTENT AREA --- 
+          overflow-y-auto ensures cards are visible even if they overflow vertically.
+      */}
+      <div className="flex-grow px-6 md:px-12 lg:px-20 pb-10 overflow-y-auto custom-scrollbar">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {verticals.map((v, i) => (
             <motion.div
               key={i}
               variants={fadeInUp}
-              whileHover={{ y: -10 }}
-              className="relative group overflow-hidden bg-white shadow-sm border border-slate-100 flex flex-col h-[350px] sm:h-[450px] lg:h-[500px]"
+              className="group bg-white shadow-sm border border-slate-100 flex flex-col rounded-sm overflow-hidden transition-all hover:shadow-md"
             >
-              {/* Top Image Part */}
-              <div className="h-1/2 overflow-hidden relative">
-                <img src={v.img} alt={v.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" />
-                <div className="absolute inset-0 bg-[#0F2F4F]/20 group-hover:bg-transparent transition-colors" />
-                <div className="absolute top-4 left-4 bg-white p-2 text-[#9E7C2E] shadow-lg">
+              {/* Image Section */}
+              <div className="h-32 md:h-36 shrink-0 overflow-hidden relative">
+                <img src={v.img} alt={v.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+                <div className="absolute inset-0 bg-[#0F2F4F]/10" />
+                <div className="absolute top-2 left-2 bg-white p-1.5 text-[#9E7C2E] shadow-sm">
                   {v.icon}
                 </div>
               </div>
 
-              {/* Bottom Content Part */}
-              <div className="h-1/2 p-6 flex flex-col justify-between bg-white relative">
-                <div>
-                  <h3 className="text-2xl font-black uppercase tracking-tighter text-[#0F2F4F] mb-3">{v.title}</h3>
-                  <p className="text-slate-400 text-xs sm:text-sm font-medium leading-relaxed uppercase tracking-tight">
-                    {v.desc}
-                  </p>
+              {/* Content Section */}
+              <div className="p-4 flex flex-col flex-grow">
+                <h3 className="text-base font-black uppercase tracking-tighter text-[#0F2F4F] mb-2 leading-tight">{v.title}</h3>
+
+                <p className="text-slate-600 text-[9px] leading-snug mb-3 font-medium">
+                  {v.desc}
+                </p>
+
+                <div className="space-y-1 mb-3">
+                  {v.services.map((s, idx) => (
+                    <div key={idx} className="flex items-start gap-2">
+                      <CheckCircle2 size={10} className="text-[#9E7C2E] mt-0.5 shrink-0" />
+                      <span className="text-[8px] font-bold uppercase tracking-tight text-slate-400 leading-tight">{s}</span>
+                    </div>
+                  ))}
                 </div>
 
-                <div className="flex items-center justify-between mt-4">
-                  <span className="text-[10px] font-black uppercase tracking-widest text-[#9E7C2E]">Learn More</span>
-                  <div className="w-10 h-10 rounded-full border border-slate-100 flex items-center justify-center group-hover:bg-[#9E7C2E] group-hover:text-white transition-all">
-                    <ArrowRight size={16} />
-                  </div>
-                </div>
-
-                {/* Vertical Decorative Text */}
-                <span className="absolute bottom-6 right-[-20px] text-6xl font-black text-slate-50 opacity-[0.03] rotate-90 pointer-events-none uppercase">
-                  {v.title}
-                </span>
+                <p className="text-slate-400 text-[8px] leading-relaxed italic border-t border-slate-50 pt-2 mt-auto">
+                  {v.desc2}
+                </p>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
-
-      {/* --- BOTTOM SYNC BAR --- */}
-      <motion.div
-        initial={{ y: 50 }}
-        animate={{ y: 0 }}
-        className="w-full bg-[#0F2F4F] grid grid-cols-2 md:grid-cols-4 divide-x divide-white/5"
-      >
-        {["Infotech", "Sports", "Events", "Construction"].map((item, i) => (
-          <div key={i} className="py-4 text-center">
-            <span className="text-[9px] font-black text-white/40 uppercase tracking-[0.3em] group-hover:text-[#9E7C2E] transition-colors">{item}</span>
-          </div>
-        ))}
-      </motion.div>
     </motion.div>
   );
 }

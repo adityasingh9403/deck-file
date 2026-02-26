@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Target, Shield, Award, Zap, Globe, Rocket, CheckCircle2 } from 'lucide-react';
+import { Target, Shield, Rocket, Globe, CheckCircle2, Lightbulb, Users, Trophy } from 'lucide-react';
 
 export default function AboutUsSlide() {
   const containerVars = {
@@ -10,128 +10,137 @@ export default function AboutUsSlide() {
   };
 
   const fadeInUp = {
-    initial: { y: 30, opacity: 0 },
-    animate: { y: 0, opacity: 1, transition: { duration: 0.8, ease: "easeOut" } }
+    initial: { y: 20, opacity: 0 },
+    animate: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } }
   };
 
-  const stats = [
-    { label: "Business Verticals", value: "04", icon: <Rocket size={16} /> },
-    { label: "Market Presence", value: "Global", icon: <Globe size={16} /> },
-    { label: "Commitment", value: "100%", icon: <CheckCircle2 size={16} /> }
+  const verticals = [
+    { name: "IT Services", icon: <Rocket size={18} /> },
+    { name: "Sports Development", icon: <Trophy size={18} /> },
+    { name: "Event Management", icon: <Users size={18} /> },
+    { name: "Construction", icon: <CheckCircle2 size={18} /> }
   ];
 
   return (
-    <motion.div 
+    <motion.div
       variants={containerVars}
       initial="initial"
       animate="animate"
       exit="exit"
-      className="relative min-h-screen w-full bg-[#F8FAFC] text-[#0F2F4F] overflow-x-hidden flex flex-col"
+      className="relative min-h-screen w-full bg-white text-[#0F2F4F] flex flex-col"
     >
-      {/* --- TOP STRIP --- */}
-      <div className="h-2 bg-[#9E7C2E] w-full" />
+      {/* Gold Accent Top Bar */}
+      <div className="h-1.5 bg-[#9E7C2E] w-full shrink-0" />
 
       <div className="flex-grow flex flex-col lg:flex-row">
-        
-        {/* --- LEFT: MISSION & STORY (55%) --- */}
-        <div className="w-full lg:w-[55%] p-6 sm:p-12 lg:p-24 flex flex-col justify-center bg-white">
-          <motion.div variants={fadeInUp} className="flex items-center gap-4 mb-8">
-            <div className="p-2 bg-[#9E7C2E]/10 rounded-lg">
-              <Zap size={18} className="text-[#9E7C2E] fill-[#9E7C2E]" />
-            </div>
-            <span className="text-[10px] font-black tracking-[0.4em] uppercase text-slate-400">About SK Prime Group</span>
-          </motion.div>
+
+        {/* --- LEFT SECTION: CONTENT --- */}
+        <div className="w-full lg:w-[60%] p-6 md:p-12 lg:p-16 xl:p-20 flex flex-col justify-center">
 
           <motion.div variants={fadeInUp}>
-            <h2 className="text-3xl sm:text-5xl font-light text-slate-300 tracking-tight leading-none italic">Defining the</h2>
-            <h1 className="text-6xl sm:text-8xl lg:text-[110px] font-black text-[#0F2F4F] uppercase leading-[0.8] tracking-tighter mt-4">
-              FUTURE <br /> <span className="text-[#9E7C2E]">LEGACY</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-[70px] font-black text-[#0F2F4F] uppercase leading-[0.9] tracking-tighter">
+              ABOUT <span className="text-[#9E7C2E]">US</span>
             </h1>
-          </motion.div>
-
-          <motion.div variants={fadeInUp} className="mt-12 space-y-6 max-w-2xl">
-            <p className="text-lg sm:text-xl text-slate-600 font-medium leading-relaxed">
-              SK Prime Group is a premier multi-sector conglomerate dedicated to <span className="text-[#0F2F4F] font-bold">Building Excellence</span> across IT, Infrastructure, and Sports Management.
-            </p>
-            <p className="text-sm text-slate-400 leading-loose uppercase tracking-widest font-bold">
-              We specialize in transforming unorganized sectors through disruptive technology and structured corporate governance, ensuring every project leaves a lasting impact on the global stage.
+            <p className="mt-6 text-base md:text-lg text-slate-600 font-bold max-w-xl leading-snug">
+              SK Prime Group is a visionary and multi-sector organization committed to empowering young graduates while delivering excellence across diverse industries. Our foundation is built on the belief that true success comes from combining education with practical skills, industry exposure, and continuous motivation.
             </p>
           </motion.div>
 
-          {/* Core Values Minimalist Grid */}
-          <motion.div variants={fadeInUp} className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-16 pt-12 border-t border-slate-100">
-            <div className="flex gap-4">
-              <Target className="text-[#9E7C2E] shrink-0" size={24} />
-              <div>
-                <h4 className="text-xs font-black uppercase tracking-widest mb-2">Our Vision</h4>
-                <p className="text-[11px] font-bold text-slate-400 uppercase leading-snug">Empowering digital landscapes with structured innovation.</p>
-              </div>
-            </div>
-            <div className="flex gap-4">
-              <Shield className="text-[#0F2F4F] shrink-0" size={24} />
-              <div>
-                <h4 className="text-xs font-black uppercase tracking-widest mb-2">Our Quality</h4>
-                <p className="text-[11px] font-bold text-slate-400 uppercase leading-snug">Certified excellence in every business vertical.</p>
-              </div>
-            </div>
+          {/* Detailed Paragraph */}
+          <motion.div variants={fadeInUp} className="mt-6 grid gap-6 pt-6 border-t border-slate-100">
+            <p className="text-xs md:text-sm text-slate-500 leading-relaxed">
+              We focus on guiding recently graduated students as they step into the professional world by providing skill development programs, mentorship, and real-world opportunities. Alongside youth empowerment, SK Prime Group operates across IT services, sports development, event management, and real estate & construction.
+              Our organization stands on innovation, integrity, quality, and long-term value creation.
+            </p>
           </motion.div>
+          <br></br>
+          <motion.div variants={fadeInUp} className="flex items-center gap-3 mb-4">
+            <span className="h-[1px] w-8 bg-[#9E7C2E]"></span>
+            <span className="text-[9px] font-black tracking-[0.4em] uppercase text-[#9E7C2E]">The SK Prime Vision</span>
+          </motion.div>
+          {/* Mission & Vision Cards */}
+          <div className="grid sm:grid-cols-2 gap-4">
+            <motion.div
+              variants={fadeInUp}
+              className="p-5 bg-[#9E7C2E] text-[var(--color-white)] rounded-xl relative overflow-hidden group"
+            >
+              <h4 className="text-[var(--color-white)] font-black text-[10px] uppercase tracking-widest mb-2 flex items-center gap-2">
+                <Target size={12} /> Our Mission
+              </h4>
+              <p className="text-[11px] text-[var(--color-white)] leading-normal">
+                To build a powerful platform that nurtures talent, delivers excellence across industries,
+                and creates real-world opportunities for growth, innovation, and long-term success.
+              </p>
+            </motion.div>
+
+            <motion.div
+              variants={fadeInUp}
+              className="p-5 bg-[#9E7C2E] border border-slate-200 rounded-xl relative overflow-hidden"
+            >
+              <h4 className="text-[var(--color-white)] font-black text-[10px] uppercase tracking-widest mb-2 flex items-center gap-2">
+                <Shield size={12} /> Our Vision
+              </h4>
+              <p className="text-[11px] text-[var(--color-white)] leading-normal">
+                To become a nationally recognized multi-sector organization known for integrity,
+                innovation, leadership, and transforming young potential into measurable success.
+              </p>
+            </motion.div>
+          </div>
         </div>
 
-        {/* --- RIGHT: VISUALS & STATS (45%) --- */}
-        <div className="w-full lg:w-[45%] relative bg-slate-100 flex flex-col overflow-hidden">
-          
-          {/* Main Background Image */}
-          <div className="h-[400px] lg:h-3/5 w-full relative">
-            <img 
-              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070" 
-              alt="Corporate Excellence" 
-              className="w-full h-full object-cover grayscale brightness-75 transition-all duration-700 hover:grayscale-0"
+        {/* --- RIGHT SECTION: IMAGE & VERTICALS --- */}
+        <div className="w-full lg:w-[40%] bg-[#0F2F4F] flex flex-col">
+
+          {/* Image Overlay Section - Reduced Height for Laptop */}
+          <div className="h-[250px] lg:h-[45%] w-full relative">
+            <img
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070"
+              alt="Team"
+              className="w-full h-full object-cover mix-blend-luminosity opacity-40 hover:opacity-60 transition-opacity duration-500"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-100 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0F2F4F] to-transparent" />
+            <div className="absolute bottom-4 left-6">
+              <span className="text-white/20 text-4xl font-black uppercase tracking-tighter italic">EST. 2026</span>
+            </div>
           </div>
 
-          {/* Stats Cards Section */}
-          <div className="flex-grow p-8 lg:p-16 flex flex-col justify-center">
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
-              {stats.map((stat, i) => (
-                <motion.div 
-                  key={i}
-                  whileHover={{ y: -5 }}
-                  className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/50 flex flex-col items-center text-center sm:items-start sm:text-left"
-                >
-                  <div className="w-10 h-10 bg-slate-50 rounded-full flex items-center justify-center text-[#9E7C2E] mb-4">
-                    {stat.icon}
+          {/* Multi-Sector Verticals List */}
+          <div className="flex-grow p-6 lg:p-10 flex flex-col justify-center">
+            <h3 className="text-[#9E7C2E] text-[9px] font-black uppercase tracking-[0.3em] mb-6">Business Verticals</h3>
+            <div className="grid grid-cols-2 gap-y-6 gap-x-2">
+              {verticals.map((item, i) => (
+                <motion.div key={i} whileHover={{ x: 3 }} className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-[#9E7C2E]">
+                    {item.icon}
                   </div>
-                  <h3 className="text-3xl font-black text-[#0F2F4F] tracking-tighter">{stat.value}</h3>
-                  <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mt-1">{stat.label}</p>
+                  <span className="text-white text-[10px] font-bold uppercase tracking-widest leading-none">
+                    {item.name}
+                  </span>
                 </motion.div>
               ))}
             </div>
-            
-            {/* Call to Action Bar */}
-            <motion.div 
-              variants={fadeInUp}
-              className="mt-12 p-6 bg-[#0F2F4F] rounded-2xl flex items-center justify-between group cursor-pointer"
-            >
-              <span className="text-white text-[10px] font-black uppercase tracking-[0.3em]">Explore Our History</span>
-              <div className="w-10 h-10 bg-[#9E7C2E] rounded-full flex items-center justify-center text-white group-hover:scale-110 transition-transform">
-                <Award size={18} />
-              </div>
-            </motion.div>
-          </div>
 
-          {/* Decorative Elements */}
-          <div className="absolute top-10 right-10 w-32 h-32 border-[20px] border-white/10 rounded-full pointer-events-none" />
+            {/* Bottom Status */}
+            <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
+              <div>
+                <p className="text-white text-xl font-black">100%</p>
+                <p className="text-[#9E7C2E] text-[7px] font-black uppercase tracking-widest">Commitment</p>
+              </div>
+              <div className="h-6 w-[1px] bg-white/10" />
+              <div>
+                <p className="text-white text-xl font-black">GLOBAL</p>
+                <p className="text-[#9E7C2E] text-[7px] font-black uppercase tracking-widest">Presence</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* --- FOOTER STATUS --- */}
-      <div className="h-12 bg-white border-t border-slate-100 flex items-center px-8 justify-between">
-        <span className="text-[9px] font-black text-slate-300 uppercase tracking-[0.5em]">SK Prime Group • Est. 2026</span>
-        <div className="flex gap-2">
-          <div className="w-1 h-1 bg-[#9E7C2E] rounded-full" />
-          <div className="w-1 h-1 bg-slate-200 rounded-full" />
-          <div className="w-1 h-1 bg-slate-200 rounded-full" />
+      {/* Compact Footer */}
+      <div className="h-8 bg-white border-t border-slate-100 flex items-center px-6 justify-between shrink-0">
+        <p className="text-[7px] font-black text-slate-300 uppercase tracking-[0.4em]">SK Prime Group Corporate Profile</p>
+        <div className="flex gap-2 items-center">
+          <CheckCircle2 size={10} className="text-[#9E7C2E]" />
         </div>
       </div>
     </motion.div>

@@ -24,9 +24,9 @@ export default function App() {
 
   // Sequence of your slides
   const SLIDES_LIST = [
-    HeroSlide, AboutSlide, WhatWeDoSlide, OurServicesSlide, 
-    TechExpertiseSlide, HowWeDoItSlide, ProcessSlide, GallerySlide, 
-    TestimonialsSlide, USPSlide, PartnersSlide, ContactSlide
+    HeroSlide, AboutSlide, WhatWeDoSlide, OurServicesSlide,
+    TechExpertiseSlide, HowWeDoItSlide, USPSlide, PartnersSlide, 
+    ContactSlide,ProcessSlide, GallerySlide, TestimonialsSlide
   ];
 
   const total = SLIDES_LIST.length;
@@ -79,12 +79,34 @@ export default function App() {
   // 2. DESKTOP VIEW (> 1080px): Presentation Slide Mode
   return (
     <div className="h-screen w-full bg-white overflow-hidden selection:bg-[#9E7C2E] selection:text-white">
-      
+      {/* Global Fixed Logo & Brand Name */}
+      <div className="fixed top-6 left-6 md:top-10 md:left-12 z-[100] pointer-events-none select-none">
+        <div className="flex items-center gap-3">
+          {/* Logo Container */}
+          <div className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center">
+            <img
+              src="/skprimegrouplogo.png"
+              alt="SK Prime Group Logo"
+              className="w-full h-full object-contain"
+            />
+          </div>
+
+          {/* Brand Text */}
+          <div className="flex flex-col">
+            <h1 className="text-xl md:text-2xl font-black tracking-tighter text-[#0F2F4F] leading-none">
+              SK PRIME GROUP
+            </h1>
+            <span className="text-[7px] md:text-[8px] font-bold tracking-[0.3em] text-[#9E7C2E] uppercase mt-0.5 opacity-80">
+              PRIVATE LIMITED
+            </span>
+          </div>
+        </div>
+      </div>
       {/* Indicators for Slide Mode */}
-      <SlideIndicators 
-        total={total} 
-        current={index} 
-        onChange={setIndex} 
+      <SlideIndicators
+        total={total}
+        current={index}
+        onChange={setIndex}
       />
 
       <main className="h-full w-full relative">
