@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Zap, Code2, Cpu, Globe, Database, Smartphone, Server, ArrowUpRight } from 'lucide-react';
+import { Code2, Cpu, Database, Smartphone, Server, ArrowUpRight } from 'lucide-react';
 
 export default function TechExpertiseSlide() {
   const containerVars = {
@@ -24,7 +24,7 @@ export default function TechExpertiseSlide() {
     {
       title: "Backend Systems",
       icon: <Server />,
-      tools: ["cplusplus", "dot-net", "java", "php", "python", "nodejs"],
+      tools: ["cplusplus", "dotnetcore", "java", "php", "python", "nodejs"],
       desc: "Robust server-side architecture for scalable applications."
     },
     {
@@ -41,7 +41,12 @@ export default function TechExpertiseSlide() {
     }
   ];
 
-  const getIconUrl = (tool) => `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tool}/${tool}-original.svg`;
+  // Fixed Devicon URL Helper
+  const getIconUrl = (tool) => {
+    // Special case for .NET
+    const toolName = tool === "dot-net" ? "dotnetcore" : tool;
+    return `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${toolName}/${toolName}-original.svg`;
+  };
 
   return (
     <motion.div
@@ -49,77 +54,79 @@ export default function TechExpertiseSlide() {
       initial="initial"
       animate="animate"
       exit="exit"
-      className="relative h-screen w-full bg-white text-[#0F2F4F] flex flex-col overflow-hidden"
+      className="relative min-h-screen w-full bg-white text-[#0F2F4F] flex flex-col overflow-x-hidden"
     >
-      {/* Brand Sidebar Line */}
-      <div className="absolute left-0 top-0 w-1 h-full bg-[#9E7C2E] z-30 hidden lg:block" />
+      {/* Brand Sidebar Line (Desktop only) */}
+      <div className="absolute left-0 top-0 w-1.5 h-full bg-[#9E7C2E] z-30 hidden lg:block" />
 
-      <div className="flex-grow flex flex-col lg:flex-row overflow-hidden">
+      <div className="flex-grow flex flex-col lg:flex-row">
         
-        {/* --- LEFT: BRANDING (Consistent with OurServicesSlide) --- */}
-        <div className="w-full lg:w-[38%] p-6 sm:p-10 lg:p-16 xl:p-20 flex flex-col justify-center bg-slate-50/50 shrink-0">
+        {/* --- LEFT: BRANDING --- */}
+        <div className="w-full lg:w-[38%] p-8 sm:p-12 lg:p-16 xl:p-20 flex flex-col justify-center bg-slate-50/50 shrink-0 border-b lg:border-b-0 lg:border-r border-slate-100">
           <motion.div variants={fadeInUp} className="flex items-center gap-3 mb-6">
-            <div className="p-1.5 bg-[#0F2F4F] rounded-md shadow-lg">
-              <Cpu size={14} className="text-white fill-white" />
+            <div className="p-2 bg-[#0F2F4F] rounded-lg shadow-lg shrink-0">
+              <Cpu size={16} className="text-white fill-white" />
             </div>
-            <span className="text-[9px] font-black tracking-[0.4em] uppercase text-slate-400">Technical Arsenal</span>
+            <span className="text-[10px] font-black tracking-[0.4em] uppercase text-slate-400">Technical Arsenal</span>
           </motion.div>
 
           <motion.div variants={fadeInUp}>
             <h2 className="text-2xl sm:text-3xl font-light text-slate-300 tracking-tight leading-none italic uppercase">Powering</h2>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black text-[#0F2F4F] uppercase leading-[0.85] tracking-tighter mt-2">
+            <h1 className="text-5xl sm:text-7xl xl:text-8xl font-black text-[#0F2F4F] uppercase leading-[0.85] tracking-tighter mt-2">
               TECH<span className="text-[#9E7C2E]">STACK</span>
             </h1>
           </motion.div>
 
-          <motion.p variants={fadeInUp} className="mt-8 text-slate-500 text-[10px] md:text-xs font-bold uppercase tracking-widest leading-relaxed max-w-xs border-l-2 border-[#9E7C2E] pl-4">
+          <motion.p variants={fadeInUp} className="mt-8 text-slate-500 text-[10px] sm:text-xs font-bold uppercase tracking-widest leading-relaxed max-w-xs border-l-2 border-[#9E7C2E] pl-4">
             Leveraging cutting-edge technologies to build future-ready digital ecosystems.
           </motion.p>
         </div>
 
         {/* --- RIGHT: TECH GRID --- */}
-        <div className="flex-grow grid grid-cols-1 sm:grid-cols-2 overflow-y-auto divide-y sm:divide-y-0 sm:divide-x divide-slate-100">
+        <div className="w-full lg:w-[62%] grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-slate-100 bg-white">
           {techStack.map((stack, i) => (
             <motion.div
               key={i}
               variants={fadeInUp}
-              className="group relative p-8 sm:p-10 lg:p-12 flex flex-col justify-between bg-white transition-all duration-500 hover:bg-slate-50/30 overflow-hidden"
+              className="group relative p-8 sm:p-10 lg:p-12 flex flex-col justify-between transition-all duration-500 hover:bg-slate-50/50 overflow-hidden min-h-[320px] sm:min-h-0"
             >
               <div className="relative z-10">
                 <div className="flex justify-between items-start mb-6">
-                  <div className="w-12 h-12 bg-white border border-slate-100 flex items-center justify-center text-[#9E7C2E] group-hover:bg-[#0F2F4F] group-hover:text-white transition-all duration-500 rounded-xl shadow-sm">
+                  <div className="w-12 h-12 bg-white border border-slate-200 flex items-center justify-center text-[#9E7C2E] group-hover:bg-[#0F2F4F] group-hover:text-white transition-all duration-500 rounded-xl shadow-sm shrink-0">
                     {React.cloneElement(stack.icon, { size: 24 })}
                   </div>
-                  <ArrowUpRight size={16} className="text-slate-200 group-hover:text-[#9E7C2E] transition-colors" />
+                  <ArrowUpRight size={18} className="text-slate-200 group-hover:text-[#9E7C2E] transition-colors" />
                 </div>
 
-                <h3 className="text-xl font-black uppercase tracking-tighter text-[#0F2F4F] mb-2">
+                <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tighter text-[#0F2F4F] mb-2">
                   {stack.title}
                 </h3>
-                <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest leading-snug mb-8">
+                <p className="text-[10px] sm:text-[11px] text-slate-400 font-bold uppercase tracking-widest leading-snug mb-8 max-w-[240px]">
                   {stack.desc}
                 </p>
 
-                {/* --- LARGE LOGO DISPLAY --- */}
-                <div className="flex flex-wrap gap-4">
+                {/* --- TECH LOGO DISPLAY --- */}
+                <div className="flex flex-wrap gap-3 sm:gap-4 relative z-20">
                   {stack.tools.map((tool, idx) => (
-                    <div 
+                    <motion.div 
                       key={idx} 
-                      className="w-14 h-14 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center justify-center p-2.5 hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+                      whileHover={{ y: -5 }}
+                      className="w-10 h-10 sm:w-14 sm:h-14 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center justify-center p-2 sm:p-3 hover:shadow-md transition-all duration-300"
                     >
                       <img 
                         src={getIconUrl(tool)} 
                         alt={tool} 
                         className="w-full h-full object-contain"
+                        loading="lazy"
                         onError={(e) => { e.target.src = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" }}
                       />
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </div>
 
-              {/* Decorative Numbering */}
-              <span className="absolute -bottom-4 -right-2 text-8xl font-black text-slate-50 group-hover:text-slate-100/50 transition-colors pointer-events-none uppercase italic">
+              {/* Decorative Background Text (Responsive positioning) */}
+              <span className="absolute -bottom-2 -right-2 text-6xl sm:text-7xl lg:text-8xl font-black text-slate-50 group-hover:text-slate-100/50 transition-colors pointer-events-none uppercase italic select-none">
                 {stack.title.split(' ')[0]}
               </span>
             </motion.div>

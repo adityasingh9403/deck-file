@@ -132,71 +132,92 @@ export default function WhatWeDoSlide() {
       initial="initial"
       animate="animate"
       exit="exit"
-      className="relative h-screen w-full bg-[#F8FAFC] text-[#0F2F4F] flex flex-col overflow-hidden"
+      // min-h-screen for mobile scrolling, h-screen fixed removed
+      className="relative min-h-screen w-full bg-[#F8FAFC] text-[#0F2F4F] flex flex-col overflow-x-hidden"
     >
-      {/* --- HEADER ---
-          pt-32 (Mobile) / pt-40 (Desktop): Taaki fixed logo se niche rahe.
-      */}
-      <div className="w-full px-6 md:px-12 lg:px-20 pt-32 md:pt-40 pb-6 shrink-0">
 
-        <motion.div variants={fadeInUp} className="flex flex-col md:flex-row md:items-end justify-between gap-2">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-[#0F2F4F] uppercase leading-none tracking-tighter">
-            WHO ARE <span className="text-[#9E7C2E]">WE</span>
-          </h1>
-          <p className="text-slate-500 text-[9px] md:text-xs font-bold uppercase tracking-widest max-w-[280px] border-l-2 border-[#9E7C2E] pl-3 mb-1">
+      {/* --- HEADER SECTION --- */}
+      <div className="w-full px-6 md:px-12 lg:px-20 pt-5 md:pt-10 lg:pt-20 pb-10">
+        <motion.div variants={fadeInUp} className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0F2F4F] uppercase leading-tight tracking-tighter">
+              WHO ARE <span className="text-[#9E7C2E]">WE</span>
+            </h1>
+            <div className="flex items-center gap-2 mt-2">
+              <span className="text-xl md:text-2xl lg:text-3xl font-bold tracking-[0.2em] uppercase text-slate-300">
+                OUR DIVISIONS
+              </span>
+            </div>
+          </div>
+
+          <p className="text-slate-500 text-[10px] md:text-xs font-bold uppercase tracking-widest max-w-[300px] border-l-2 border-[#9E7C2E] pl-4">
             Excellence across diverse industries with a unified vision.
           </p>
         </motion.div>
-        <motion.div variants={fadeInUp} className="flex items-center gap-2 mb-2">
-          <span className="text-[30px] font-black tracking-[0.4em] uppercase text-slate-400">OUR DIVISIONS</span>
-        </motion.div>
       </div>
 
-      {/* --- SCROLLABLE CONTENT AREA --- 
-          overflow-y-auto ensures cards are visible even if they overflow vertically.
-      */}
-      <div className="flex-grow px-6 md:px-12 lg:px-20 pb-10 overflow-y-auto custom-scrollbar">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      {/* --- CARDS GRID --- */}
+      <div className="flex-grow px-6 md:px-12 lg:px-20 pb-20">
+        {/* Grid Layout: 
+      Mobile: 1 col, 
+      Tablet (sm): 2 cols, 
+      Desktop/Laptop (lg): 4 cols 
+  */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
           {verticals.map((v, i) => (
             <motion.div
               key={i}
               variants={fadeInUp}
-              className="group bg-white shadow-sm border border-slate-100 flex flex-col rounded-sm overflow-hidden transition-all hover:shadow-md"
+              className="group bg-white shadow-sm border border-slate-100 flex flex-col rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full"
             >
-              {/* Image Section */}
-              <div className="h-32 md:h-36 shrink-0 overflow-hidden relative">
-                <img src={v.img} alt={v.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
-                <div className="absolute inset-0 bg-[#0F2F4F]/10" />
-                <div className="absolute top-2 left-2 bg-white p-1.5 text-[#9E7C2E] shadow-sm">
+              {/* Image Section: Height fixed for consistency on larger screens */}
+              <div className="h-44 sm:h-48 lg:h-44 shrink-0 overflow-hidden relative">
+                <img
+                  src={v.img}
+                  alt={v.title}
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                />
+                <div className="absolute inset-0 bg-[#0F2F4F]/20 group-hover:bg-transparent transition-colors" />
+                <div className="absolute top-4 left-4 bg-white p-2 text-[#9E7C2E] rounded-md shadow-md">
                   {v.icon}
                 </div>
               </div>
 
-              {/* Content Section */}
-              <div className="p-4 flex flex-col flex-grow">
-                <h3 className="text-base font-black uppercase tracking-tighter text-[#0F2F4F] mb-2 leading-tight">{v.title}</h3>
+              {/* Content Section: flex-grow ensures cards stay equal height */}
+              <div className="p-5 flex flex-col flex-grow">
+                {/* Title: min-height added so multi-line titles don't break alignment */}
+                <h3 className="text-lg font-black uppercase tracking-tight text-[#0F2F4F] mb-3 leading-tight group-hover:text-[#9E7C2E] transition-colors min-h-[3rem] flex items-center">
+                  {v.title}
+                </h3>
 
-                <p className="text-slate-600 text-[9px] leading-snug mb-3 font-medium">
+                <p className="text-slate-600 text-xs leading-relaxed mb-4 font-medium line-clamp-3">
                   {v.desc}
                 </p>
 
-                <div className="space-y-1 mb-3">
+                {/* Services List: Takes up remaining space */}
+                <div className="space-y-2 mb-6 flex-grow">
                   {v.services.map((s, idx) => (
                     <div key={idx} className="flex items-start gap-2">
-                      <CheckCircle2 size={10} className="text-[#9E7C2E] mt-0.5 shrink-0" />
-                      <span className="text-[8px] font-bold uppercase tracking-tight text-slate-400 leading-tight">{s}</span>
+                      <CheckCircle2 size={12} className="text-[#9E7C2E] mt-0.5 shrink-0" />
+                      <span className="text-[10px] font-bold uppercase tracking-wide text-slate-500 leading-tight">
+                        {s}
+                      </span>
                     </div>
                   ))}
                 </div>
 
-                <p className="text-slate-400 text-[8px] leading-relaxed italic border-t border-slate-50 pt-2 mt-auto">
-                  {v.desc2}
-                </p>
+                {/* Bottom Quote: Stays at the bottom because of flex-grow above */}
+                <div className="pt-4 border-t border-slate-50 mt-auto">
+                  <p className="text-slate-400 text-[10px] leading-relaxed italic line-clamp-3">
+                    {v.desc2}
+                  </p>
+                </div>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
+
     </motion.div>
   );
 }
