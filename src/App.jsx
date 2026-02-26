@@ -12,10 +12,7 @@ import WhatWeDoSlide from './slides/WhatWeDoSlide';
 import OurServicesSlide from './slides/OurServicesSlide';
 import TechExpertiseSlide from './slides/TechExpertiseSlide';
 import HowWeDoItSlide from './slides/HowWeDoItSlide';
-import ProcessSlide from './slides/ProcessSlide';
-import GallerySlide from './slides/GallerySlide';
 import PartnersSlide from './slides/PartnersSlide';
-import TestimonialsSlide from './slides/TestimonialsSlide';
 import ContactSlide from './slides/ContactSlide';
 
 export default function App() {
@@ -25,7 +22,7 @@ export default function App() {
   const SLIDES_LIST = [
     HeroSlide, AboutSlide, WhatWeDoSlide, OurServicesSlide,
     TechExpertiseSlide, HowWeDoItSlide, USPSlide, PartnersSlide,
-    ContactSlide, ProcessSlide, GallerySlide, TestimonialsSlide
+    ContactSlide
   ];
 
   const total = SLIDES_LIST.length;
