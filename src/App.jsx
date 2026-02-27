@@ -7,12 +7,10 @@ import SlideIndicators from './components/SlideIndicators';
 // All Slides
 import HeroSlide from './slides/HeroSlide';
 import AboutSlide from './slides/AboutSlide';
-import USPSlide from './slides/USPSlide';
 import WhatWeDoSlide from './slides/WhatWeDoSlide';
 import OurServicesSlide from './slides/OurServicesSlide';
 import TechExpertiseSlide from './slides/TechExpertiseSlide';
 import HowWeDoItSlide from './slides/HowWeDoItSlide';
-import PartnersSlide from './slides/PartnersSlide';
 import ContactSlide from './slides/ContactSlide';
 
 export default function App() {
@@ -21,8 +19,7 @@ export default function App() {
 
   const SLIDES_LIST = [
     HeroSlide, AboutSlide, WhatWeDoSlide, OurServicesSlide,
-    TechExpertiseSlide, HowWeDoItSlide, USPSlide, PartnersSlide,
-    ContactSlide
+    TechExpertiseSlide, HowWeDoItSlide, ContactSlide
   ];
 
   const total = SLIDES_LIST.length;
@@ -46,28 +43,35 @@ export default function App() {
     return () => window.removeEventListener("keydown", handleKey);
   }, [index, isMobile, total]);
 
-  // --- UNIVERSAL LOGO COMPONENT ---
-  const BrandLogo = () => (
-    <div className="fixed top-4 left-4 md:top-10 md:left-12 z-[999] pointer-events-none select-none">
-      <div className="flex items-center gap-2 md:gap-3">
-        <div className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center shrink-0">
-          <img
-            src="/skprimegrouplogo.png"
-            alt="SK Prime Group Logo"
-            className="w-full h-full object-contain"
-          />
+  // --- UNIVERSAL NAVBAR COMPONENT ---
+  const BrandLogo = () => {
+    return (
+      <nav className="w-full bg-white border-b border-gray-100 shadow-sm sticky top-0 z-[999] px-4 md:px-12 py-3 md:py-4">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+
+          {/* Logo Section */}
+          <div className="flex items-center gap-2 md:gap-3 select-none">
+            <div className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center shrink-0">
+              <img
+                src="/skprimegrouplogo.png"
+                alt="SK Prime Group Logo"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <div className="flex flex-col justify-center">
+              <h1 className="text-base md:text-2xl font-black tracking-tighter text-[#0F2F4F] leading-none">
+                SK PRIME GROUP
+              </h1>
+              <span className="text-[6px] md:text-[8px] font-extrabold tracking-[0.2em] text-[#9E7C2E] uppercase opacity-90">
+                PRIVATE LIMITED
+              </span>
+            </div>
+          </div>
+
         </div>
-        <div className="flex flex-col justify-center">
-          <h1 className="text-base md:text-2xl font-black tracking-tighter text-[#0F2F4F] leading-none">
-            SK PRIME GROUP
-          </h1>
-          <span className="text-[6px] md:text-[8px] font-extrabold tracking-[0.2em] text-[#9E7C2E] uppercase opacity-90">
-            PRIVATE LIMITED
-          </span>
-        </div>
-      </div>
-    </div>
-  );
+      </nav>
+    );
+  };
 
   const CurrentSlide = SLIDES_LIST[index];
 
@@ -77,7 +81,7 @@ export default function App() {
       <div className="relative w-full bg-white selection:bg-[#9E7C2E] selection:text-white">
         {/* Logo yahan bhi add kar diya */}
         <BrandLogo />
-        
+
         <div className="flex flex-col">
           {SLIDES_LIST.map((Slide, i) => (
             <section key={i} className="w-full border-b border-slate-50 min-h-screen">

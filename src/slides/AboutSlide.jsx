@@ -31,8 +31,6 @@ export default function AboutUsSlide() {
       className="relative min-h-screen w-full bg-white text-[#0F2F4F] flex flex-col overflow-x-hidden"
     >
       {/* Gold Accent Top Bar */}
-      <div className="h-1.5 bg-[#9E7C2E] w-full shrink-0" />
-
       <div className="flex-grow flex flex-col lg:flex-row">
 
         {/* --- LEFT SECTION: CONTENT --- */}
