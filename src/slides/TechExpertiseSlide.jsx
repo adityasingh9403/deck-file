@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code2, Cpu, Database, Smartphone, Server, ArrowUpRight, Zap } from 'lucide-react';
+import { Code2, Cpu, Database, Smartphone, Server, ArrowUpRight, Cloud } from 'lucide-react';
 
 export default function TechExpertiseSlide() {
   const containerVars = {
@@ -16,32 +16,61 @@ export default function TechExpertiseSlide() {
 
   const techStack = [
     {
-      title: "Frontend Dev",
+      title: "Frontend",
       icon: <Code2 />,
-      tools: ["html5", "css3", "javascript", "react", "nextjs"],
-      desc: "Modern UIs & immersive web experiences."
+      tools: [
+        { name: "HTML5", slug: "html5" },
+        { name: "CSS3", slug: "css3" },
+        { name: "JS", slug: "javascript" },
+        { name: "React", slug: "react" },
+        { name: "Next.js", slug: "nextjs" }
+      ],
+      desc: "Modern UIs & immersive webs."
     },
     {
-      title: "Backend Systems",
+      title: "Backend",
       icon: <Server />,
-      tools: ["java", "php", "python", "nodejs"],
-      desc: "Robust & scalable server-side architecture."
+      tools: [
+        { name: "Java", slug: "java" },
+        { name: "PHP", slug: "php" },
+        { name: "Python", slug: "python" },
+        { name: "Node.js", slug: "nodejs" }
+      ],
+      desc: "Scalable server architectures."
     },
     {
-      title: "Mobile Solutions",
+      title: "Mobile",
       icon: <Smartphone />,
-      tools: ["apple", "android", "react"],
-      desc: "Native & cross-platform mobile apps."
+      tools: [
+        { name: "iOS", slug: "apple" },
+        { name: "Android", slug: "android" },
+        { name: "R-Native", slug: "react" }
+      ],
+      desc: "Native & Cross-platform apps."
     },
     {
-      title: "Infrastructure",
+      title: "Database",
       icon: <Database />,
-      tools: ["mysql", "postgresql", "amazonwebservices", "azure"],
-      desc: "Cloud-native data management."
+      tools: [
+        { name: "MySQL", slug: "mysql" },
+        { name: "Postgres", slug: "postgresql" },
+        { name: "MongoDB", slug: "mongodb" }
+      ],
+      desc: "High-performance data storage."
+    },
+    {
+      title: "Cloud & Ops",
+      icon: <Cloud />,
+      tools: [
+        { name: "AWS", slug: "amazonwebservices" },
+        { name: "Azure", slug: "azure" },
+        { name: "Docker", slug: "docker" }
+      ],
+      desc: "Cloud-native infrastructure."
     }
   ];
 
-  const getIconUrl = (tool) => `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tool}/${tool}-original.svg`;
+  const getIconUrl = (slug) => `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${slug}/${slug}-original.svg`;
 
   return (
     <motion.div
@@ -49,83 +78,92 @@ export default function TechExpertiseSlide() {
       initial="initial"
       animate="animate"
       exit="exit"
-      className="relative min-h-screen lg:h-screen w-full bg-white text-[#0F2F4F] flex flex-col overflow-x-hidden lg:overflow-hidden font-sans"
+      // Desktop: Fixed Height (h-screen) | Mobile: Min Height
+      className="relative min-h-screen lg:h-screen w-full bg-white text-[#0F2F4F] flex flex-col font-sans lg:overflow-hidden"
     >
-      {/* Brand Sidebar (Desktop Only) */}
-      <div className="absolute left-0 top-0 w-1.5 h-full bg-[#9E7C2E] z-30 hidden lg:block" />
-
-      <div className="flex-grow flex flex-col lg:flex-row h-full">
+      <div className="flex flex-col lg:flex-row h-full">
         
-        {/* --- LEFT SECTION: BRANDING (Responsive Padding) --- */}
-        <div className="w-full lg:w-[38%] p-8 md:p-12 lg:p-20 flex flex-col justify-center bg-slate-50/50 shrink-0 border-b lg:border-b-0 lg:border-r border-slate-100 relative">
-          <motion.div variants={fadeInUp} className="flex items-center gap-3 mb-6">
-            <div className="p-2 bg-[#0F2F4F] rounded-lg shadow-xl shrink-0">
+        {/* --- LEFT SECTION: BRANDING --- */}
+        <div className="w-full lg:w-[28%] p-8 lg:p-12 flex flex-col justify-center bg-slate-50 shrink-0 border-b lg:border-b-0 lg:border-r border-slate-200">
+          <motion.div variants={fadeInUp} className="flex items-center gap-3 mb-4">
+            <div className="p-2 bg-[#0F2F4F] rounded-lg">
               <Cpu size={14} className="text-white" />
             </div>
-            <span className="text-[10px] font-black tracking-[0.4em] uppercase text-slate-400">Technical Arsenal</span>
+            <span className="text-[9px] font-black tracking-[0.4em] uppercase text-slate-400">Technical Arsenal</span>
           </motion.div>
 
           <motion.div variants={fadeInUp}>
-            <h2 className="text-2xl md:text-3xl font-light text-slate-300 tracking-tight leading-none italic uppercase">Powering</h2>
-            <h1 className="text-5xl md:text-7xl xl:text-[90px] font-black text-[#0F2F4F] uppercase leading-[0.85] tracking-tighter mt-2">
-              OUR<br /> <span className="text-[#9E7C2E]">EXPERTISE</span>
+            <h1 className="text-5xl lg:text-[70px] xl:text-[85px] font-black text-[#0F2F4F] uppercase leading-[0.85] tracking-tighter">
+              OUR<br /> <span className="text-[#9E7C2E]">TECH</span><br />STACK
             </h1>
           </motion.div>
 
-          <motion.p variants={fadeInUp} className="mt-8 text-slate-500 text-[11px] md:text-xs font-bold uppercase tracking-widest leading-relaxed max-w-xs border-l-2 border-[#9E7C2E] pl-4">
-            SK Prime Infotech leverages cutting-edge tech to build future-ready digital ecosystems.
+          <motion.p variants={fadeInUp} className="mt-6 text-slate-500 text-[10px] font-bold uppercase tracking-widest leading-relaxed border-l-2 border-[#9E7C2E] pl-4 max-w-[220px]">
+            Future-ready digital ecosystems engineered for global scale.
           </motion.p>
         </div>
 
         {/* --- RIGHT SECTION: TECH GRID --- */}
-        <div className="w-full lg:w-[62%] grid grid-cols-1 sm:grid-cols-2 h-full bg-white">
+        {/* lg:grid-rows-2 ensures it stays in a rectangle on Desktop */}
+        <div className="flex-grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 bg-white">
           {techStack.map((stack, i) => (
             <motion.div
               key={i}
               variants={fadeInUp}
-              className="group relative p-8 lg:p-10 flex flex-col justify-between border-b border-r border-slate-100 transition-all duration-500 hover:bg-slate-50/50 overflow-hidden"
+              // p-6 for compact desktop view
+              className="group p-6 lg:p-8 border-b border-r border-slate-100 transition-all duration-500 hover:bg-slate-50 flex flex-col justify-between overflow-hidden"
             >
-              <div className="relative z-10">
-                <div className="flex justify-between items-start mb-6">
-                  <div className="w-12 h-12 bg-white border border-slate-200 flex items-center justify-center text-[#9E7C2E] group-hover:bg-[#0F2F4F] group-hover:text-white transition-all duration-500 rounded-2xl shadow-sm shrink-0">
-                    {React.cloneElement(stack.icon, { size: 24 })}
+              <div>
+                <div className="flex justify-between items-start mb-4">
+                  <div className="w-10 h-10 bg-white border border-slate-200 flex items-center justify-center text-[#9E7C2E] group-hover:bg-[#0F2F4F] group-hover:text-white transition-all rounded-xl shadow-sm">
+                    {React.cloneElement(stack.icon, { size: 20 })}
                   </div>
-                  <ArrowUpRight size={18} className="text-slate-200 group-hover:text-[#9E7C2E] transition-colors" />
+                  <ArrowUpRight size={16} className="text-slate-200 group-hover:text-[#9E7C2E]" />
                 </div>
 
-                <h3 className="text-xl md:text-2xl font-black uppercase tracking-tighter text-[#0F2F4F] mb-1">
+                <h3 className="text-xl font-black uppercase tracking-tighter text-[#0F2F4F] mb-1">
                   {stack.title}
                 </h3>
-                <p className="text-[10px] md:text-[11px] text-slate-400 font-bold uppercase tracking-widest leading-tight mb-8">
+                <p className="text-[9px] text-slate-400 font-bold uppercase tracking-widest mb-6">
                   {stack.desc}
                 </p>
 
-                {/* --- TECH ICONS --- */}
-                <div className="flex flex-wrap gap-3 relative z-20">
+                {/* --- COMPACT TECH TOOLS GRID (2 Columns on Desktop) --- */}
+                <div className="grid grid-cols-2 gap-x-4 gap-y-2">
                   {stack.tools.map((tool, idx) => (
-                    <motion.div 
-                      key={idx} 
-                      whileHover={{ y: -5, scale: 1.1 }}
-                      className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center justify-center p-2 hover:shadow-md transition-all duration-300"
+                    <div 
+                      key={idx}
+                      className="flex items-center gap-2 group/tool"
                     >
-                      <img 
-                        src={getIconUrl(tool)} 
-                        alt={tool} 
-                        className="w-full h-full object-contain"
-                        loading="lazy"
-                        onError={(e) => { e.target.src = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" }}
-                      />
-                    </motion.div>
+                      <div className="w-6 h-6 shrink-0 opacity-80 group-hover/tool:opacity-100 transition-opacity">
+                        <img 
+                          src={getIconUrl(tool.slug)} 
+                          alt={tool.name} 
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                      <span className="text-[10px] font-black uppercase tracking-wider text-slate-500 group-hover/tool:text-[#0F2F4F] truncate">
+                        {tool.name}
+                      </span>
+                    </div>
                   ))}
                 </div>
               </div>
 
-              {/* Decorative Background Label (Desktop Only) */}
-              <span className="absolute -bottom-4 -right-2 text-7xl xl:text-8xl font-black text-slate-50 group-hover:text-slate-100/30 transition-colors pointer-events-none uppercase italic select-none hidden md:block">
-                {stack.title.split(' ')[0]}
-              </span>
+              <div className="mt-4 pt-3 border-t border-slate-50 opacity-40 group-hover:opacity-100 transition-opacity">
+                 <span className="text-[8px] font-black text-slate-300 uppercase tracking-widest">_ System Ready</span>
+              </div>
             </motion.div>
           ))}
+          
+          {/* FILLER CARD: To complete the 3x2 grid on desktop */}
+          <div className="hidden lg:flex p-8 items-center justify-center bg-slate-50/20 border-b border-r border-slate-100">
+             <div className="flex flex-col items-center gap-2 opacity-20">
+                <div className="w-12 h-[1px] bg-[#0F2F4F]" />
+                <span className="text-[9px] font-black uppercase tracking-[0.5em]">SK PRIME</span>
+                <div className="w-12 h-[1px] bg-[#0F2F4F]" />
+             </div>
+          </div>
         </div>
       </div>
     </motion.div>

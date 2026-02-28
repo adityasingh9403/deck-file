@@ -8,7 +8,6 @@ import SlideIndicators from './components/SlideIndicators';
 import HeroSlide from './slides/HeroSlide';
 import AboutSlide from './slides/AboutSlide';
 import WhatWeDoSlide from './slides/WhatWeDoSlide';
-import OurServicesSlide from './slides/OurServicesSlide';
 import TechExpertiseSlide from './slides/TechExpertiseSlide';
 import HowWeDoItSlide from './slides/HowWeDoItSlide';
 import ContactSlide from './slides/ContactSlide';
@@ -18,7 +17,7 @@ export default function App() {
   const [isMobile, setIsMobile] = useState(false);
 
   const SLIDES_LIST = [
-    HeroSlide, AboutSlide, WhatWeDoSlide, OurServicesSlide,
+    HeroSlide, AboutSlide, WhatWeDoSlide,
     TechExpertiseSlide, HowWeDoItSlide, ContactSlide
   ];
 

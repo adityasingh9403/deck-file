@@ -10,12 +10,12 @@ export default function HowWeDoItSlide() {
   };
 
   const methods = [
-    { title: "Planning", tag: "P1", icon: <Search />, desc: "Requirement Analysis", sub: ["Scope", "Risk"] },
-    { title: "Design", tag: "P2", icon: <Lightbulb />, desc: "UI/UX & Architecture", sub: ["Schema", "UX"] },
-    { title: "Coding", tag: "P3", icon: <Code2 />, desc: "Agile Development", sub: ["Sprints", "Code"] },
-    { title: "Testing", tag: "P4", icon: <ShieldCheck />, desc: "Quality Assurance", sub: ["UAT", "Bugs"] },
-    { title: "Launch", tag: "P5", icon: <Rocket />, desc: "Live Deployment", sub: ["Cloud", "CI/CD"] },
-    { title: "Support", tag: "P6", icon: <Settings />, desc: "Continuous Evolution", sub: ["Fixes", "Updates"] }
+    { title: "Planning", icon: <Search />, desc: "Requirement Analysis", sub: ["Scope", "Risk"] },
+    { title: "Design", icon: <Lightbulb />, desc: "Architecture", sub: ["Schema", "UX"] },
+    { title: "Coding", icon: <Code2 />, desc: "Agile Dev", sub: ["Sprints", "Code"] },
+    { title: "Testing", icon: <ShieldCheck />, desc: "QA & Testing", sub: ["UAT", "Bugs"] },
+    { title: "Launch", icon: <Rocket />, desc: "Deployment", sub: ["Cloud", "CI/CD"] },
+    { title: "Support", icon: <Settings />, desc: "Evolution", sub: ["Fixes", "Updates"] }
   ];
 
   return (
@@ -24,29 +24,30 @@ export default function HowWeDoItSlide() {
       initial="initial"
       animate="animate"
       exit="exit"
-      className="relative min-h-screen lg:h-screen w-full bg-[#FBFBFB] text-[#0F2F4F] flex flex-col overflow-x-hidden lg:overflow-hidden px-4 sm:px-10 lg:px-20 py-8 lg:py-10"
+      // Desktop: Fixed h-screen & overflow-hidden | Mobile: min-h-screen
+      className="relative min-h-screen lg:h-screen w-full bg-[#FBFBFB] text-[#0F2F4F] flex flex-col px-4 sm:px-10 lg:px-16 py-6 lg:py-6 lg:overflow-hidden"
     >
       {/* --- BACKGROUND ACCENT --- */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#9E7C2E]/[0.03] via-transparent to-transparent pointer-events-none" />
 
-      {/* --- HEADER --- */}
-      <div className="text-center mb-10 lg:mb-12 relative z-10 shrink-0">
-        <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#9E7C2E]/10 rounded-full mb-3">
-          <Zap size={12} className="text-[#9E7C2E] fill-[#9E7C2E]" />
-          <span className="text-[10px] font-black tracking-widest uppercase text-[#9E7C2E]">The Lifecycle Loop</span>
+      {/* --- HEADER (Compact for Desktop) --- */}
+      <div className="text-center mb-6 lg:mb-4 relative z-10 shrink-0">
+        <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#9E7C2E]/10 rounded-full mb-2">
+          <Zap size={10} className="text-[#9E7C2E] fill-[#9E7C2E]" />
+          <span className="text-[9px] font-black tracking-widest uppercase text-[#9E7C2E]">The Lifecycle Loop</span>
         </div>
-        <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-[#0F2F4F] uppercase tracking-tighter leading-none">
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-[#0F2F4F] uppercase tracking-tighter leading-none">
           SDLC <span className="text-[#9E7C2E]">PROCESS</span>
         </h1>
       </div>
 
-      {/* --- RESPONSIVE GRID / FLOW --- */}
-      <div className="flex-grow flex items-center justify-center relative w-full h-full">
+      {/* --- GRID FLOW --- */}
+      <div className="flex-grow flex items-center justify-center relative w-full h-full overflow-hidden">
         
-        {/* SVG Path Connector (Desktop Only) */}
-        <svg className="absolute w-full h-full top-0 left-0 hidden lg:block pointer-events-none opacity-20" viewBox="0 0 1000 400">
+        {/* SVG Path (Optimized) */}
+        <svg className="absolute w-full h-full top-0 left-0 hidden lg:block pointer-events-none opacity-10" viewBox="0 0 1000 400">
           <path 
-            d="M 150 120 Q 500 120 850 120 Q 950 120 950 200 T 850 280 Q 500 280 150 280" 
+            d="M 100 150 H 900 V 300 H 100" 
             fill="none" 
             stroke="#9E7C2E" 
             strokeWidth="2" 
@@ -54,51 +55,49 @@ export default function HowWeDoItSlide() {
           />
         </svg>
 
-        {/* Grid: 1 col (Mobile), 2 col (Tablet), 3 col (Desktop) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 w-full max-w-6xl relative z-10">
+        {/* Locked Grid: 3 Cols x 2 Rows on Desktop */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 gap-4 lg:gap-x-10 lg:gap-y-6 w-full max-w-6xl h-full lg:max-h-[75%] relative z-10">
           {methods.map((step, i) => (
             <motion.div
               key={i}
-              whileHover={{ scale: 1.03, y: -5 }}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="relative group"
+              whileHover={{ scale: 1.02, y: -3 }}
+              className="relative group h-full"
             >
-              <div className="bg-white p-6 md:p-8 border border-slate-100 shadow-sm hover:shadow-2xl rounded-[2.5rem] flex flex-col items-center text-center transition-all duration-500 border-b-8 border-b-[#9E7C2E]/20 hover:border-b-[#9E7C2E] h-full">
+              {/* Compact Card Design */}
+              <div className="bg-white p-5 lg:p-6 border border-slate-100 shadow-sm rounded-[2rem] flex flex-col items-center text-center transition-all duration-500 border-b-4 border-b-[#9E7C2E]/20 hover:border-b-[#9E7C2E] h-full justify-center">
                 
                 {/* Index Circle */}
-                <div className="absolute -top-3 -left-2 w-10 h-10 bg-[#9E7C2E] text-white text-xs font-black rounded-full flex items-center justify-center shadow-lg border-4 border-white z-20">
+                <div className="absolute -top-2 -left-2 w-8 h-8 bg-[#0F2F4F] group-hover:bg-[#9E7C2E] text-white text-[10px] font-black rounded-full flex items-center justify-center transition-colors shadow-md border-2 border-white">
                   0{i + 1}
                 </div>
 
-                {/* Icon Circle */}
-                <div className="w-14 h-14 md:w-16 md:h-16 bg-[#0F2F4F] text-white flex items-center justify-center rounded-full mb-5 group-hover:bg-[#9E7C2E] transition-all duration-700 transform group-hover:rotate-[360deg] shadow-inner shrink-0">
-                  {React.cloneElement(step.icon, { size: 28 })}
+                {/* Icon (Scaled down for Laptop) */}
+                <div className="w-12 h-12 lg:w-14 lg:h-14 bg-slate-50 text-[#0F2F4F] flex items-center justify-center rounded-2xl mb-3 group-hover:bg-[#0F2F4F] group-hover:text-white transition-all duration-500">
+                  {React.cloneElement(step.icon, { size: 22 })}
                 </div>
 
                 {/* Content */}
-                <h3 className="text-lg md:text-xl font-black uppercase text-[#0F2F4F] mb-2 tracking-tight">
+                <h3 className="text-base lg:text-lg font-black uppercase text-[#0F2F4F] mb-1 tracking-tight">
                   {step.title}
                 </h3>
-                <p className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-tight leading-tight mb-4 px-2">
+                <p className="text-[9px] font-bold text-slate-400 uppercase tracking-tighter mb-3">
                   {step.desc}
                 </p>
 
-                {/* Tags */}
-                <div className="flex flex-wrap justify-center gap-2 mt-auto">
+                {/* Compact Tags */}
+                <div className="flex flex-wrap justify-center gap-1.5 mt-1">
                   {step.sub.map((s, idx) => (
-                    <span key={idx} className="text-[8px] md:text-[9px] font-black text-slate-400 border border-slate-100 px-3 py-1 rounded-full uppercase bg-slate-50">
+                    <span key={idx} className="text-[7px] lg:text-[8px] font-black text-slate-500 border border-slate-100 px-2.5 py-0.5 rounded-full uppercase bg-slate-50/50">
                       {s}
                     </span>
                   ))}
                 </div>
               </div>
 
-              {/* Arrow Connector (Desktop Only) */}
-              {i < 5 && (
-                <div className="absolute top-1/2 -right-4 lg:-right-8 -translate-y-1/2 text-[#9E7C2E]/40 hidden lg:block group-hover:text-[#9E7C2E] transition-colors">
-                  <ArrowRight size={24} />
+              {/* Arrow Connector (Desktop) */}
+              {i < 5 && i !== 2 && (
+                <div className="absolute top-1/2 -right-6 lg:-right-8 -translate-y-1/2 text-[#9E7C2E]/20 hidden lg:block">
+                  <ArrowRight size={20} />
                 </div>
               )}
             </motion.div>
@@ -106,14 +105,14 @@ export default function HowWeDoItSlide() {
         </div>
       </div>
 
-      {/* --- FOOTER --- */}
-      <div className="mt-8 flex items-center justify-between border-t border-slate-100 pt-6 shrink-0">
-        <span className="text-[9px] font-black text-slate-300 tracking-[0.3em] uppercase italic">
+      {/* --- FOOTER (Compact) --- */}
+      <div className="mt-4 flex items-center justify-between border-t border-slate-100 pt-4 shrink-0">
+        <span className="text-[8px] font-black text-slate-300 tracking-[0.3em] uppercase italic">
           Standardized SDLC v2.0 Execution Framework
         </span>
-        <div className="flex gap-1.5 items-center">
-          <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-          <span className="text-[9px] font-black text-emerald-600 uppercase">System Active</span>
+        <div className="flex gap-1 items-center">
+          <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+          <span className="text-[8px] font-black text-emerald-600 uppercase">System Active</span>
         </div>
       </div>
     </motion.div>

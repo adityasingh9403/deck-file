@@ -20,28 +20,28 @@ export default function WhatWeDoSlide() {
       icon: <Monitor size={20} />,
       desc: "Growing IT startup focused on smart digital solutions and professional training.",
       services: ["Web & App Development", "Social Media Management", "Creative Branding", "Training Programs"],
-      img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000"
+      img: "/skprimeinfotech.png"
     },
     {
       title: "SK Prime Sports",
       icon: <Trophy size={20} />,
       desc: "Dedicated to promoting physical development through quality sports equipment supply.",
       services: ["Equipment Supply", "Institutional Support", "Club & Academy Support"],
-      img: "https://images.unsplash.com/photo-1504450758481-7338eba7524a?q=80&w=1000"
+      img: "/skprimesports.png"
     },
     {
       title: "SK Prime Events",
       icon: <Calendar size={20} />,
       desc: "Specializing in professional event planning and impactful management.",
       services: ["Sports Event Management", "Corporate Events", "Community Programs", "Promotional Events"],
-      img: "https://executiveevents.in/userfiles/Services/632b3947c41349968f876cec50845c09.jpg"
+      img: "/skprimevent.png"
     },
     {
-      title: "Verma Construction",
+      title: "Verma Prime Properties and Construction",
       icon: <Building2 size={20} />,
       desc: "Infrastructure division dedicated to quality construction and property solutions.",
       services: ["Building Construction", "Office Complexes", "Property Development", "Real Estate Consultation"],
-      img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000"
+      img: "/vermaprime.png"
     }
   ];
 
@@ -68,9 +68,6 @@ export default function WhatWeDoSlide() {
               OUR <span className="text-[#9E7C2E]">DIVISIONS</span>
             </h1>
           </div>
-          <p className="text-slate-500 text-[10px] md:text-xs font-bold uppercase tracking-widest max-w-[280px] border-l-2 border-[#9E7C2E] pl-4">
-            Delivering Excellence Across Diverse Verticals.
-          </p>
         </motion.div>
       </div>
 
